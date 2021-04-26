@@ -38,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         final EditText usernameEditText = findViewById(R.id.username);
         final EditText passwordEditText = findViewById(R.id.password);
         final EditText mailEditText = findViewById(R.id.registerMail);
+        final EditText nameEditText = findViewById(R.id.registerName);
         final CheckBox isArtistType = (CheckBox) findViewById(R.id.registrationArtistCheckbox);
         final Button loginButton = findViewById(R.id.loginButton);
         final Button registerButton = findViewById(R.id.registerButton);
@@ -128,7 +129,9 @@ public class LoginActivity extends AppCompatActivity {
                 loginViewModel.register(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString(),
                         mailEditText.getText().toString(),
-                        isArtistType.isChecked());
+                        nameEditText.getText().toString(),
+                        isArtistType.isChecked() ? "Artist" : "Client"
+                );
             }
         });
     }

@@ -2,26 +2,44 @@ package com.diploma.client;
 
 import com.diploma.client.data.model.User;
 
+import org.json.JSONException;
+
+import java.io.IOException;
 import java.util.Dictionary;
 import java.util.List;
 
 public class Artist extends User {
-    private String nickname;
-    private String VkUrl;
-    private String ArtStationUrl;
-    private String OtherUrl;
+    public String nickname;
+    public String VkUrl;
+    public String ArtStationUrl;
+    public String OtherUrl;
 
-    private boolean available;
+    public boolean available;
 
 
-    List<Artwork.Genre> genres;
-    List<Artwork.Style> styles;
+    public List<Artwork.Genre> genres;
+    public List<Artwork.Style> styles;
 
-    private String exclusions;
+    public String exclusions;
 
-    Dictionary<Artwork.Type, Integer> price;
+    public Dictionary<Artwork.Type, Integer> price;
 
-    public Artist(String login, String password, String mail, String name, String profilePictureUrl) {
-        super(login, password, mail, name, profilePictureUrl);
+    public Artist(int user_id, String nickname, String vkUrl, String artStationUrl, String otherUrl,
+                  boolean available,
+                  List<Artwork.Genre> genres, List<Artwork.Style> styles,
+                  String exclusions)
+            throws IOException, JSONException {
+
+        super(user_id);
+
+        this.nickname = nickname;
+        this.VkUrl = vkUrl;
+        this.ArtStationUrl = artStationUrl;
+        this.OtherUrl = otherUrl;
+        this.available = available;
+        this.genres = genres;
+        this.styles = styles;
+        this.exclusions = exclusions;
     }
+
 }

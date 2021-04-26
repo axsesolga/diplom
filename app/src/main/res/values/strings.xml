@@ -4,6 +4,7 @@
     <string name="prompt_login">username</string>
     <string name="prompt_password">Password</string>
     <string name="prompt_nickname">Nick Name</string>
+    <string name="prompt_name">Name Mark Mark</string>
     <string name="prompt_VkUrl">vk.com/example</string>
     <string name="prompt_ArstationUrl">artstation.com/example</string>
     <string name="prompt_email">example@mail.com</string>

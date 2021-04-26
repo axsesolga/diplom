@@ -29,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 0)
-        {
+        if (requestCode == 0) {
             setUser();
         }
     }
@@ -54,6 +53,26 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+/*
+        Button openUploadPictureButton = (Button) findViewById(R.id.openUploadPictureActivity);
+        openUploadPictureButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, .class);
+                startActivity(intent);
+            }
+        });
+
+        Button openCreateAdvertButton = (Button) findViewById(R.id.openCreateAdvertActivity);
+        openCreateAdvertButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, .class);
+                startActivity(intent);
+            }
+        });
+        */
+ 
     }
 
     public void setUser() {
@@ -65,11 +84,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (user == null)
-        {
+        if (user == null) {
 
-        }
-        else {
+        } else {
 
         }
 

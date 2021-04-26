@@ -52,9 +52,9 @@ public class LoginRepository {
         return result;
     }
 
-    public Result<User> register(String username, String password, String mail, boolean isArtist) {
+    public Result<User> register(String username, String password, String mail, String name, String userType) {
         // handle registration
-        Result<User> result = dataSource.register(username, password, mail, isArtist);
+        Result<User> result = dataSource.register(username, password, mail, name, userType);
         if (result instanceof Result.Success) {
             setLoggedInUser(((Result.Success<User>) result).getData());
         }

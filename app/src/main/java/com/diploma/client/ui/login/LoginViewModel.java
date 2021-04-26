@@ -30,7 +30,7 @@ public class LoginViewModel extends ViewModel {
     }
 
     public void login(String username, String password) {
-        // can be launched in a separate asynchronous job
+
         Result<User> result = loginRepository.login(username, password);
 
         if (result instanceof Result.Success) {
@@ -41,9 +41,9 @@ public class LoginViewModel extends ViewModel {
         }
     }
 
-    public void register(String username, String password, String mail, boolean isArtist) {
-        // can be launched in a separate asynchronous job
-        Result<User> result = loginRepository.register(username, password, mail, isArtist);
+    public void register(String username, String password, String mail, String name, String isArtist) {
+
+        Result<User> result = loginRepository.register(username, password, mail, name, isArtist);
 
         if (result instanceof Result.Success) {
             User data = ((Result.Success<User>) result).getData();

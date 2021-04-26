@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,15 +11,36 @@
         android:layout_width="150dp"
         android:layout_height="105dp"
         android:text="Login"
-        tools:layout_editor_absoluteX="18dp"
-        tools:layout_editor_absoluteY="115dp" />
+        android:layout_alignParentRight="true"
+        />
 
     <Button
         android:id="@+id/openProfileAndSettingsActivity"
         android:layout_width="150dp"
         android:layout_height="105dp"
         android:text="Profile"
-        tools:layout_editor_absoluteX="217dp"
-        tools:layout_editor_absoluteY="115dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/openLoginActivity"
+        />
+
+    <Button
+        android:id="@+id/openUploadPictureActivity"
+        android:layout_width="152dp"
+        android:layout_height="96dp"
+        android:text="Upload Picture"
+
+        android:layout_alignParentLeft="true"
+        />
+
+    <Button
+        android:id="@+id/openCreateAdvertActivity"
+        android:layout_width="152dp"
+        android:layout_height="96dp"
+        android:text="Create Advert"
+
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/openUploadPictureActivity"
+        />
+
+</RelativeLayout>
