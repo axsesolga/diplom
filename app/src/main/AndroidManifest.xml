@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.diploma.client">
-    <uses-permission android:name="android.permission.INTERNET" />
-    <application
-        android:networkSecurityConfig="@xml/network_security_config"
-        android:usesCleartextTraffic="true"
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Diploma">
-        <activity android:name=".ProfileActivity" />
+        android:theme="@style/Theme.Diploma"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ClientProfileActivity"></activity>
+        <activity android:name=".Chat" />
+        <activity android:name=".ChatListViewActivity" />
+        <activity android:name=".PictureInfoActivity" />
+        <activity android:name=".AdvertInfoActivity" />
+        <activity android:name=".CreateAdvertActivity" />
+        <activity android:name=".UploadPictureActivity" />
+        <activity android:name=".ArtistProfileActivity" />
         <activity
             android:name=".ui.login.LoginActivity"
             android:label="@string/title_activity_login" />

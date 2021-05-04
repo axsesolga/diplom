@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PictureInfoActivity">
+
+
+    <TextView
+        android:id="@+id/pictureId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="id"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+
+
+        />
+
+
+    <TextView
+        android:id="@+id/pictureUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="url"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:layout_alignParentRight="true"
+
+        android:layout_below="@+id/pictureId"
+
+        />
+
+    <TextView
+        android:id="@+id/pictureDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="descr"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:layout_alignParentRight="true"
+
+        android:layout_below="@+id/pictureUrl"
+
+        />
+
+    <TextView
+        android:id="@+id/pictureArtistId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="artist id"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:layout_alignParentRight="true"
+
+        android:layout_below="@+id/pictureDescription"
+
+        />
+
+    <TextView
+        android:id="@+id/pictureGenres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="genres"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:layout_alignParentRight="true"
+
+        android:layout_below="@+id/pictureArtistId"
+
+        />
+
+    <TextView
+        android:id="@+id/pictureStyles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="styles"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:layout_alignParentRight="true"
+
+        android:layout_below="@+id/pictureGenres"
+
+        />
+
+</RelativeLayout>

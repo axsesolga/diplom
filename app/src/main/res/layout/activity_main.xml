@@ -34,13 +34,43 @@
         />
 
     <Button
+        android:id="@+id/openPictureInfoActivity"
+        android:layout_width="152dp"
+        android:layout_height="96dp"
+        android:text="Picture Info Acitivty"
+
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/openUploadPictureActivity"
+        />
+
+
+    <Button
         android:id="@+id/openCreateAdvertActivity"
         android:layout_width="152dp"
         android:layout_height="96dp"
         android:text="Create Advert"
 
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/openUploadPictureActivity"
+        android:layout_below="@+id/openPictureInfoActivity"
+        />
+
+    <Button
+        android:id="@+id/openAdvertInfoActivity"
+        android:layout_width="152dp"
+        android:layout_height="96dp"
+        android:text="Advert info activity"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/openCreateAdvertActivity"
+        />
+
+    <Button
+        android:id="@+id/openChatActivity"
+        android:layout_width="152dp"
+        android:layout_height="96dp"
+        android:text="Chat activity"
+
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/openAdvertInfoActivity"
         />
 
 </RelativeLayout>

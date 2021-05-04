@@ -4,60 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".ArtistProfileActivity">
 
 
 
 
     <TextView
-        android:id="@+id/profileUsername"
+        android:id="@+id/profileArtistUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="USERNAME"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
 
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         />
 
     <TextView
-        android:id="@+id/profileMail"
+        android:id="@+id/profileArtistMail"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:text="MAIL"
-
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/profileUsername"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+
+        android:layout_below="@+id/profileArtistUsername"
         />
 
 
     <TextView
-        android:id="@+id/profileType"
+        android:id="@+id/profileArtistType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="USERTYPE"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
 
-        android:layout_below="@+id/profileMail"
+        android:layout_below="@+id/profileArtistMail"
         />
 
     <TextView
-        android:id="@+id/profileName"
+        android:id="@+id/profileArtistName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="FULL NAME"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
 
-        android:layout_below="@+id/profileType"
+        android:layout_below="@+id/profileArtistType"
         />
 
     <TextView
-        android:id="@+id/profilePictureUrl"
+        android:id="@+id/profileArtistPictureUrl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="AVATAR"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
 
-        android:layout_below="@+id/profileName"
+        android:layout_below="@+id/profileArtistName"
         />
 
     <TextView
@@ -66,8 +81,11 @@
         android:layout_height="wrap_content"
         android:text="NICKNAME"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
 
-        android:layout_below="@+id/profilePictureUrl"
+        android:layout_below="@+id/profileArtistPictureUrl"
         />
 
     <TextView
@@ -76,6 +94,9 @@
         android:layout_height="wrap_content"
         android:text="VK"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
 
         android:layout_below="@+id/artistProfileNickname"
         />
@@ -87,6 +108,9 @@
         android:layout_height="wrap_content"
         android:text="ARTSTATION"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
 
         android:layout_below="@+id/artistProfileVKurl"
         />
@@ -97,6 +121,9 @@
         android:layout_height="wrap_content"
         android:text="OTHER URL"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
 
         android:layout_below="@+id/artistProfileASurl"
         />
@@ -108,6 +135,9 @@
         android:layout_height="wrap_content"
         android:text="AVAILBLE"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
 
         android:layout_below="@+id/artistProfileOtherUrl"
         />
@@ -119,6 +149,9 @@
         android:layout_height="wrap_content"
         android:text="GENRES"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
 
         android:layout_below="@+id/artistProfileAvailable"
         />
@@ -130,6 +163,9 @@
         android:layout_height="wrap_content"
         android:text="STYLES"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
 
         android:layout_below="@+id/artistProfileGenres"
         />
@@ -140,6 +176,9 @@
         android:layout_height="wrap_content"
         android:text="EXCLUSIONS"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
 
         android:layout_below="@+id/artistProfileStyles"
         />
@@ -150,12 +189,37 @@
         android:layout_height="wrap_content"
         android:text="PRICE"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
 
         android:layout_below="@+id/artistProfileExclusions"
         />
 
+    <TextView
+        android:id="@+id/profileArtistId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Artist ID"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
 
+        android:layout_below="@+id/artistProfilePrice"
+        />
+    <TextView
+        android:id="@+id/profileArtistUserId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User ID"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
 
+        android:layout_below="@+id/profileArtistId"
+        />
 
 
 
@@ -167,6 +231,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
 
         android:text="username" />
 
@@ -177,6 +244,9 @@
         android:text="mail"
 
         android:layout_alignParentLeft="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
         android:layout_below="@+id/textView1"
          />
 
@@ -187,6 +257,9 @@
         android:text="usertype"
 
         android:layout_below="@+id/textView2"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
         android:layout_alignParentLeft="true"
         />
 
@@ -198,6 +271,9 @@
         android:text="full name"
 
         android:layout_below="@+id/textView3"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
         android:layout_alignParentLeft="true"
         />
 
@@ -209,7 +285,18 @@
         android:text="avatar"
 
         android:layout_below="@+id/textView4"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
         android:layout_alignParentLeft="true"
         />
+
+    <Button
+        android:id="@+id/artistLogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

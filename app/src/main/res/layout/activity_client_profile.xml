@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClientProfileActivity">
+
+
+    <TextView
+        android:id="@+id/profileClientUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USERNAME"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        />
+
+    <TextView
+        android:id="@+id/profileClientMail"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:text="MAIL"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+
+        android:layout_below="@+id/profileClientUsername"
+        />
+
+
+    <TextView
+        android:id="@+id/profileClientType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USERTYPE"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+
+        android:layout_below="@+id/profileClientMail"
+        />
+
+    <TextView
+        android:id="@+id/profileClientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FULL NAME"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+
+        android:layout_below="@+id/profileClientType"
+        />
+
+    <TextView
+        android:id="@+id/profileClientPictureUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AVATAR"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+
+        android:layout_below="@+id/profileClientName"
+        />
+
+    <TextView
+        android:id="@+id/clientFavouriteArtists"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CLIENT FAVS"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+
+        android:layout_below="@+id/profileClientPictureUrl"
+        />
+
+
+    <TextView
+        android:id="@+id/profileClientId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CLIENT id"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+
+        android:layout_below="@+id/clientFavouriteArtists"
+        />
+
+
+    <TextView
+        android:id="@+id/profileClientUserId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Base ID"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+
+        android:layout_below="@+id/profileClientId"
+        />
+
+
+    <Button
+        android:id="@+id/clientLogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

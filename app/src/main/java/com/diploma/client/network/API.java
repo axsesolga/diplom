@@ -1,86 +1,52 @@
 package com.diploma.client.network;
 
-import com.diploma.client.Artist;
-import com.diploma.client.Client;
+import android.content.Context;
+
+import com.diploma.client.data.model.Advert;
+import com.diploma.client.data.model.Artwork;
+import com.diploma.client.data.model.ChatMessage;
+import com.diploma.client.data.model.Picture;
 import com.diploma.client.data.model.User;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 import java.security.InvalidParameterException;
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
 
 
 public class API {
-
-    private static final String homeUrl = "http://192.168.31.207:8000/api/";
-
-    public static String getAuthJsonPost(String username, String password) {
+    // create json for http request
+    private static String getJson(HashMap<String, String> values) {
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("username", username);
-            jsonObject.put("password", password);
+            for (String key : values.keySet()) {
+                jsonObject.put(key, values.get(key));
+            }
+            return jsonObject.toString();
         } catch (JSONException e) {
             e.printStackTrace();
+            throw new IllegalArgumentException("Can not create JSON with selected values.");
         }
-        return jsonObject.toString();
-    }
-
-    public static String getRegisterJsonPost(String username, String password, String mail, String name, String isArtist) {
-        JSONObject jsonObject = new JSONObject();
-        try {
-            jsonObject.put("username", username);
-            jsonObject.put("password", password);
-            jsonObject.put("email", mail);
-            jsonObject.put("full_name", name);
-            jsonObject.put("user_type", isArtist);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return jsonObject.toString();
-    }
-
-    public static String doPostRequest(String url, String json) throws IOException {
-        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json);
-        Request request = new Request.Builder()
-                .url(url)
-                .post(body)
-                .build();
-        okhttp3.Response response = new OkHttpClient().newCall(request).execute();
-        if (((int) response.code()) == 200 || ((int) response.code())  == 201) { // 201 = creation
-            return response.body().string();
-        } else if (((int) response.code()) == 403) {
-            throw new SecurityException("invalid login data");
-        } else
-            throw new IOException(response.message().toString());
-    }
-
-    public static String doGetRequest(String url) throws IOException {
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
-        okhttp3.Response response = new OkHttpClient().newCall(request).execute();
-        if (((int) response.code()) == 200) {
-            return response.body().string();
-        } else if (((int) response.code()) == 403) {
-            throw new SecurityException("invalid login data");
-        } else
-            throw new IOException(response.message().toString());
     }
 
 
-    public static User login(String username, String password) throws Exception {
-        String requesUrl = homeUrl + "login/";
-        String json = getAuthJsonPost(username, password);
-        Integer userId = Integer.parseInt(doPostRequest(requesUrl, json));
+    public static User login(String username, String password) throws IOException {
+        String requesUrl = Network.homeUrl + "login/";
+        String json = getJson(new HashMap<String, String>() {{
+            put("username", username);
+            put("password", password);
+        }});
+
+        Integer userId = Integer.parseInt(Network.doPostRequest(requesUrl, json));
+
         // login successful, lets get user data
+        // todo сделать новый post запрос на сервере чтобы получить всю инфу о юзере
         for (User user : getAllArtists()) {
             if (user.user_id == userId)
                 return user;
@@ -94,49 +60,95 @@ public class API {
         throw new InvalidParameterException("No such username found");
     }
 
-    public static User register(String username, String password, String mail, String name, String userType) throws Exception {
-        String requesUrl = homeUrl + "register/";
-        String json = getRegisterJsonPost(username, password,mail,name,userType);
-        String res = doPostRequest(requesUrl, json); // if ok no exception thrown
+    public static User register(String username, String password, String mail, String name, String userType) throws IOException, SecurityException {
+        String requesUrl = Network.homeUrl + "register/";
+        String json = getJson(new HashMap<String, String>() {{
+            put("username", username);
+            put("password", password);
+            put("email", mail);
+            put("full_name", name);
+            put("user_type", userType);
+        }});
+        String res = Network.doPostRequest(requesUrl, json); // if ok no exception thrown
 
         return login(username, password);
     }
 
 
-    public static List<? extends User> getAllClients() {
-        String requesUrl = homeUrl + "client-profile/all/";
-        try {
-            String resStr = doGetRequest(requesUrl);
-            return JSONParser.parseClientArray(resStr);
+    public static List<? extends User> getAllClients() throws IOException, SecurityException {
+        String requesUrl = Network.homeUrl + "client-profile/all/";
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return new ArrayList<>();
+        return JSONParser.parseClientArray(Network.doGetRequest(requesUrl));
     }
 
-    public static List<? extends User> getAllArtists() {
-        String requesUrl = homeUrl + "artist-profile/all/";
-        ArrayList<Artist> artists = new ArrayList<>();
-        try {
-            String resStr = doGetRequest(requesUrl);
-            return JSONParser.parseArtistArray(resStr);
+    public static List<? extends User> getAllArtists() throws IOException {
+        String requesUrl = Network.homeUrl + "artist-profile/all/";
 
-        } catch (IOException  e) {
-            e.printStackTrace();
-        }
-        return artists;
+        return JSONParser.parseArtistArray(Network.doGetRequest(requesUrl));
     }
 
 
+    public static List<ChatMessage> getAllChatMessages() throws IOException, SecurityException {
+        String requesUrl = Network.homeUrl + "chat-message/user/all/";
+        return JSONParser.parseChatMessageList(Network.doGetRequest(requesUrl));
+    }
+
+    public static ArrayList<Artwork.Genre> getAllGenres() throws IOException {
+        String requesUrl = Network.homeUrl + "genre/all/";
+        return JSONParser.parseGenreList(Network.doGetRequest(requesUrl));
+    }
+
+    public static ArrayList<Artwork.Style> getAllStyles() throws IOException {
+        String requesUrl = Network.homeUrl + "style/all/";
+        String resStr = Network.doGetRequest(requesUrl);
+        return JSONParser.parseStyleList(resStr);
+    }
+
+    public static ArrayList<Artwork.Type> getAllTypes() throws IOException {
+        String requesUrl = Network.homeUrl + "type/all/";
+        return JSONParser.parseTypeList(Network.doGetRequest(requesUrl));
+    }
 
     /*
-    Used only in Client/Artist creation
+    Used only in Client/Artist instance creation
      */
     public static User getBaseUser(int user_id) throws IOException, JSONException {
-        String requesUrl = homeUrl + "base-user/info/" + user_id;
+        String requesUrl = Network.homeUrl + "base-user/info/" + user_id;
+        return JSONParser.parseUser(Network.doGetRequest(requesUrl));
+    }
 
-            String resStr = doGetRequest(requesUrl);
-            return JSONParser.parseUser(resStr);
+    public static void logout() throws IOException {
+        String requesUrl = Network.homeUrl + "logout";
+        Network.doGetRequest(requesUrl);
+    }
+
+    public static ArrayList<Advert> getAllAdverts() throws IOException {
+        String requesUrl = Network.homeUrl + "advertisement/all/";
+        return JSONParser.parseAdvertList(Network.doGetRequest(requesUrl));
+    }
+
+    public static ArrayList<Picture> getAllPictures() throws IOException {
+        String requesUrl = Network.homeUrl + "picture/all/";
+        return JSONParser.parsePictureList(Network.doGetRequest(requesUrl));
+    }
+
+    public static void createNewPicture(Picture picture, Context context) throws IOException {
+        String requesUrl = Network.homeUrl + "picture/create/";
+
+        String json = getJson(new HashMap<String, String>() {{
+            put("image", picture.base64string);
+            put("description", picture.description);
+            put("artist_id", Integer.toString(picture.artist_id));
+        }});
+        json = removeLastChar(json) + ",";
+
+        json = json + "\"list_of_genres\":[2],\"list_of_styles\":[2]}";
+        Network.doPostRequest(requesUrl, json);
+    }
+    public static String removeLastChar(String s) {
+        if (s == null || s.length() == 0) {
+            return s;
+        }
+        return s.substring(0, s.length()-1);
     }
 }
