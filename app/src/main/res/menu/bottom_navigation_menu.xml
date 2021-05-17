@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:enabled="true"
+        android:icon="@drawable/menu_home"
+        android:title="Home"/>
+    <item
+        android:id="@+id/navigation_chat"
+        android:enabled="true"
+        android:icon="@drawable/chat"
+        android:title="navigation_chat"/>
+
+    <item
+        android:id="@+id/navigation_Create"
+        android:enabled="true"
+        android:icon="@drawable/menu_plus"
+        android:title="navigation_create"/>
+
+    <item
+        android:id="@+id/navigation_Fav"
+        android:enabled="true"
+        android:icon="@drawable/meny_star"
+        android:title="navigation_fav"/>
+
+    <item
+        android:id="@+id/navigation_Profile"
+        android:enabled="true"
+        android:icon="@drawable/menu_head"
+        android:title="navigation_profile"/>
+
+</menu>

@@ -1,20 +1,16 @@
 package com.diploma.client.network;
 
-import android.content.Context;
-
 import com.diploma.client.data.model.Advert;
 import com.diploma.client.data.model.Artwork;
-import com.diploma.client.data.model.ChatMessage;
 import com.diploma.client.data.model.Picture;
 import com.diploma.client.data.model.User;
+import com.diploma.client.solo_activities.chat.UserChatMessage;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.io.IOException;
 import java.security.InvalidParameterException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -88,7 +84,7 @@ public class API {
     }
 
 
-    public static List<ChatMessage> getAllChatMessages() throws IOException, SecurityException {
+    public static ArrayList<UserChatMessage> getAllChatMessages() throws IOException, SecurityException {
         String requesUrl = Network.homeUrl + "chat-message/user/all/";
         return JSONParser.parseChatMessageList(Network.doGetRequest(requesUrl));
     }
@@ -105,7 +101,7 @@ public class API {
     }
 
     public static ArrayList<Artwork.Type> getAllTypes() throws IOException {
-        String requesUrl = Network.homeUrl + "type/all/";
+        String requesUrl = Network.homeUrl + "job-type/all/";
         return JSONParser.parseTypeList(Network.doGetRequest(requesUrl));
     }
 
@@ -132,23 +128,53 @@ public class API {
         return JSONParser.parsePictureList(Network.doGetRequest(requesUrl));
     }
 
-    public static void createNewPicture(Picture picture, Context context) throws IOException {
+    public static void createNewPicture(Picture picture) throws IOException {
         String requesUrl = Network.homeUrl + "picture/create/";
+
+        StringBuilder genres = new StringBuilder();
+        genres.append("[");
+        for (Artwork.Genre genre : picture.genres) {
+            genres.append(genre.id);
+            genres.append(",");
+        }
+        genres.append("]");
+
+        StringBuilder styles = new StringBuilder();
+        styles.append("[");
+        for (Artwork.Style style : picture.styles) {
+            styles.append(style.id);
+            styles.append(",");
+        }
+        genres.append("]");
 
         String json = getJson(new HashMap<String, String>() {{
             put("image", picture.base64string);
             put("description", picture.description);
             put("artist_id", Integer.toString(picture.artist_id));
+            put("list_of_genres", genres.toString());
+            put("list_of_styles", styles.toString());
         }});
-        json = removeLastChar(json) + ",";
 
-        json = json + "\"list_of_genres\":[2],\"list_of_styles\":[2]}";
-        Network.doPostRequest(requesUrl, json);
+        if (!Network.doPostRequest(requesUrl, json).contains("\"id\":"))
+            throw new IOException("ivalid data, can not create image");
     }
-    public static String removeLastChar(String s) {
-        if (s == null || s.length() == 0) {
-            return s;
-        }
-        return s.substring(0, s.length()-1);
+
+
+    public static void sendMessage(String text, int senderId, int reciverId) throws IOException {
+        String requesUrl = Network.homeUrl + "chat-message/create/";
+
+        String json = getJson(new HashMap<String, String>() {{
+            put("receiver_id", Integer.toString(reciverId));
+            put("sender_id", Integer.toString(senderId));
+            put("text", text);
+        }});
+
+        if (!Network.doPostRequest(requesUrl, json).contains("\"departure_time\":"))
+            throw new IOException("ivalid data, can not send message");
+    }
+
+    public static void createAdvert()
+    {
+        String requesUrl = Network.homeUrl + "chat-message/create/";
     }
 }

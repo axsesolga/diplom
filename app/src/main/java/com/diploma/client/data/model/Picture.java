@@ -2,8 +2,12 @@ package com.diploma.client.data.model;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.util.Base64;
+
+import com.diploma.client.R;
 
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
@@ -21,6 +25,14 @@ public class Picture {
     public int artist_id;
     public ArrayList<Artwork.Genre> genres;
     public ArrayList<Artwork.Style> styles;
+
+    public Bitmap getBitmap()
+    {
+
+        byte[] decodedString = Base64.decode(base64string, Base64.DEFAULT);
+        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+        return  decodedByte;
+    }
 
     public Picture(int id, String base64string, String description, int artist_id, ArrayList<Artwork.Genre> genres, ArrayList<Artwork.Style> styles) {
         this.id = id;

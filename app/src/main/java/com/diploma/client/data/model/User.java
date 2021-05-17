@@ -19,16 +19,15 @@ public class User {
     public String profilePictureUrl;
     public String userType;
 
-    public boolean isClient()
-    {
+    public boolean isClient() {
         return userType.equals("Client");
     }
-    public boolean isArtist()
-    {
+
+    public boolean isArtist() {
         return userType.equals("Artist");
     }
 
-    public User( int user_id, String login, String mail, String name, String profilePictureUrl, String userType) {
+    public User(int user_id, String login, String mail, String name, String profilePictureUrl, String userType) {
         this.user_id = user_id;
         this.login = login;
         this.mail = mail;

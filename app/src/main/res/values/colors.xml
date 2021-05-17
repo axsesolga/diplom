@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="background">#FFFFE0</color>
+    <color name="backgroundPale">#FFEFD5</color> <!--бледный-->
+    <color name="backgroundDarker">#FFD700</color>
+    <color name="backgroundLighter">#FFE4B5</color>
+
+
+    <color name="text_main">#FFFFFFFF</color>
+    <color name="text_main_pale">#C0C0C0</color>  <!--бледный-->
+    <color name="text_darker">#808080</color>
 </resources>

@@ -1,10 +1,15 @@
-package com.diploma.client;
+package com.diploma.client.solo_activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.diploma.client.MainActivity;
+import com.diploma.client.R;
 import com.diploma.client.data.model.Picture;
 
 public class PictureInfoActivity extends AppCompatActivity {
@@ -22,5 +27,9 @@ public class PictureInfoActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.pictureArtistId)).setText(Integer.toString(picture.artist_id));
         ((TextView) findViewById(R.id.pictureGenres)).setText(Integer.toString(picture.genres.size()));
         ((TextView) findViewById(R.id.pictureStyles)).setText(Integer.toString(picture.styles.size()));
+
+        ImageView image =(ImageView)findViewById(R.id.pictureImage);
+        image.setImageBitmap(picture.getBitmap());
+
     }
 }

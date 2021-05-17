@@ -5,26 +5,35 @@ import android.content.res.Resources;
 import java.util.ArrayList;
 
 public class Artwork {
-    public static class Genre {
+    public static class ArtworkProperties
+    {
+        public int id;
+        public String name;
+        public String description;
+
+        public ArtworkProperties(int id, String name, String description) {
+            this.id = id;
+            this.name = name;
+            this.description = description;
+        }
+    }
+
+    public static class Genre extends ArtworkProperties{
         public static ArrayList<Genre> allGenres;
 
-        private int id;
-        private String name;
-        private String description;
 
         public Genre(int id, String name, String description) {
-            this.id = id;
-            this.description = description;
-            this.name = name;
+            super(id, name, description);
         }
 
-        public static Genre getById(int id) {
+        public Genre getById(int id) {
             for (Genre genre : allGenres) {
                 if (genre.id == id)
                     return genre;
             }
             throw new Resources.NotFoundException("No genre with this name found. Update local repo of genres.");
         }
+
 
         @Override
         public String toString() {
@@ -35,7 +44,7 @@ public class Artwork {
         }
     }
 
-    public static class Type // тип в ценах. Фул, халф, пр...
+    public static class Type extends ArtworkProperties // тип в ценах. Фул, халф, пр...
     {
         public static ArrayList<Type> allTypes;
 
@@ -44,9 +53,7 @@ public class Artwork {
         private String description;
 
         public Type(int id, String name, String description) {
-            this.id = id;
-            this.description = description;
-            this.name = name;
+            super(id, name, description);
         }
 
         public static Type getById(int id) {
@@ -66,17 +73,15 @@ public class Artwork {
         }
     }
 
-    public static class Style {
+    public static class Style extends ArtworkProperties{
         public static ArrayList<Style> allStyles;
 
-        private int id;
+        public int id;
         private String name;
         private String description;
 
         public Style(int id, String name, String description) {
-            this.id = id;
-            this.description = description;
-            this.name = name;
+            super(id, name, description);
         }
 
         public static Style   getById(int id) {

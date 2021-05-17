@@ -13,14 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Diploma"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ClientProfileActivity"></activity>
-        <activity android:name=".Chat" />
-        <activity android:name=".ChatListViewActivity" />
-        <activity android:name=".PictureInfoActivity" />
-        <activity android:name=".AdvertInfoActivity" />
-        <activity android:name=".CreateAdvertActivity" />
-        <activity android:name=".UploadPictureActivity" />
-        <activity android:name=".ArtistProfileActivity" />
+        <activity android:name=".data.model_edit.SelectStylesActivity"></activity>
+        <activity android:name=".data.model_edit.SelectGenresActivity" />
+        <activity android:name=".solo_activities.users.ClientProfileEditActivity" />
+        <activity android:name=".solo_activities.users.ArtistProfileEditActivity" />
+        <activity android:name=".solo_activities.users.ClientProfileInfoActivity" />
+        <activity android:name=".solo_activities.chat.UserChat" />
+        <activity android:name=".solo_activities.PictureInfoActivity" />
+        <activity android:name=".solo_activities.AdvertInfoActivity" />
+        <activity android:name=".solo_activities.CreateAdvertActivity" />
+        <activity android:name=".solo_activities.users.ArtistProfileInfoActivity" />
         <activity
             android:name=".ui.login.LoginActivity"
             android:label="@string/title_activity_login" />

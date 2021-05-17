@@ -1,4 +1,4 @@
-package com.diploma.client;
+package com.diploma.client.solo_activities.users;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.diploma.client.R;
 import com.diploma.client.data.LoginDataSource;
 import com.diploma.client.data.LoginRepository;
 import com.diploma.client.data.model.Client;
@@ -18,7 +19,7 @@ import com.diploma.client.network.API;
 
 import java.io.IOException;
 
-public class ClientProfileActivity extends AppCompatActivity {
+public class ClientProfileInfoActivity extends AppCompatActivity {
     Client client = (Client) LoginRepository.getInstance(new LoginDataSource()).getUser();
     Context context;
 

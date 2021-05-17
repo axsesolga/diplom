@@ -1,4 +1,4 @@
-package com.diploma.client;
+package com.diploma.client.solo_activities.users;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.diploma.client.R;
 import com.diploma.client.data.LoginDataSource;
 import com.diploma.client.data.LoginRepository;
 import com.diploma.client.data.model.Artist;
@@ -19,7 +20,7 @@ import com.diploma.client.network.API;
 
 import java.io.IOException;
 
-public class ArtistProfileActivity extends AppCompatActivity {
+public class ArtistProfileInfoActivity extends AppCompatActivity {
     Artist artist = (Artist) LoginRepository.getInstance(new LoginDataSource()).getUser();
     Context context;
 
@@ -54,29 +55,8 @@ public class ArtistProfileActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        //logout
-        Button logOutButton = (Button) findViewById(R.id.artistLogOut);
-        logOutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new logoutAsynch().execute();
-                finish();
-            }
-        });
 
 
     }
 
-    static class logoutAsynch extends AsyncTask<Void, Void, Void> {
-        protected Void doInBackground(Void... params) {
-
-            try {
-                API.logout();
-                LoginRepository.getInstance(new LoginDataSource()).logout();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-    }
 }

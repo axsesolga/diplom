@@ -3,7 +3,7 @@ package com.diploma.client.network;
 import com.diploma.client.data.model.Advert;
 import com.diploma.client.data.model.Artist;
 import com.diploma.client.data.model.Artwork;
-import com.diploma.client.data.model.ChatMessage;
+import com.diploma.client.solo_activities.chat.UserChatMessage;
 import com.diploma.client.data.model.Client;
 import com.diploma.client.data.model.Picture;
 import com.diploma.client.data.model.User;
@@ -125,20 +125,28 @@ public class JSONParser {
     }
 
 
-    public static ChatMessage parseChatMessage(String json) throws JSONException, ParseException {
+    public static UserChatMessage parseChatMessage(String json) throws JSONException, ParseException {
         JSONObject obj = new JSONObject(json);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyy-MM-dd'T'HH:mm:ss'Z'"); //todo should make local time for user?
-        Date serverReceivedTime = sdf.parse(obj.getString("departure_time"));
+        Date serverReceivedTime = null;
+
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'"); //todo should make local time for user?
+            serverReceivedTime = sdf.parse(obj.getString("departure_time"));
+        }
+        catch (ParseException e) {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"); //todo should make local time for user?
+            serverReceivedTime = sdf.parse(obj.getString("departure_time"));
+        }
 
         String text = obj.getString("text");
         Integer receiverId = Integer.parseInt(obj.getString("receiver_id"));
         Integer senderId = Integer.parseInt(obj.getString("sender_id"));
 
-        return new ChatMessage(receiverId, senderId, serverReceivedTime, text);
+        return new UserChatMessage(receiverId, senderId, serverReceivedTime, text);
     }
 
-    public static ArrayList<ChatMessage> parseChatMessageList(String json) {
-        ArrayList<ChatMessage> messages = new ArrayList<>();
+    public static ArrayList<UserChatMessage> parseChatMessageList(String json) {
+        ArrayList<UserChatMessage> messages = new ArrayList<>();
         try {
             JSONArray messageArray = new JSONArray(json);
             for (int i = 0; i < messageArray.length(); i++) {

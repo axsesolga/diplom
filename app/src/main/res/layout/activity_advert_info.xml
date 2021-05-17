@@ -4,33 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdvertInfoActivity">
+    tools:context=".solo_activities.AdvertInfoActivity">
 
     <TextView
         android:id="@+id/advertId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="USERNAME"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
 
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
+        android:textAlignment="center"
+        android:gravity="center"
+
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+
+        android:background="@color/background"
+
+        android:text="USERNAME"
 
 
         />
 
 
     <TextView
-        android:id="@+id/advertDesiredValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="value"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:layout_alignParentRight="true"
+        android:id="@+id/AdvertCreateDesiredValue"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+
+        android:textAlignment="center"
+        android:gravity="center"
+        android:background="@color/background"
+
+
+        android:text="advert id"
+
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+
 
         android:layout_below="@+id/advertId"
 
@@ -38,70 +49,89 @@
 
 
     <TextView
-        android:id="@+id/advertTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="value"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:layout_alignParentRight="true"
+        android:id="@+id/AdvertCreateTitle"
 
-        android:layout_below="@+id/advertDesiredValue"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
 
-        />
+        android:textAlignment="center"
+        android:gravity="center"
+        android:background="@color/background"
 
-    <TextView
-        android:id="@+id/advertDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="value"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:layout_alignParentRight="true"
+        android:text="Desired Value"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
 
-        android:layout_below="@+id/advertTitle"
+        android:layout_below="@+id/AdvertCreateDesiredValue"
 
         />
 
     <TextView
-        android:id="@+id/advertAdditionalInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="value"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:layout_alignParentRight="true"
+        android:id="@+id/AdvertCreateDescription"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
 
-        android:layout_below="@+id/advertDescription"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:background="@color/background"
+        android:text="Title"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+
+        android:layout_below="@+id/AdvertCreateTitle"
+
+        />
+
+    <TextView
+        android:id="@+id/AdvertCreateAdditionalInfo"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+
+        android:textAlignment="center"
+        android:gravity="center"
+        android:background="@color/background"
+        android:text="Description"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+
+        android:layout_below="@+id/AdvertCreateDescription"
 
         />
 
     <TextView
         android:id="@+id/advertClientId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="value"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:layout_alignParentRight="true"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
 
-        android:layout_below="@+id/advertAdditionalInfo"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:background="@color/background"
+
+        android:text="Additional info"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+
+        android:layout_below="@+id/AdvertCreateAdditionalInfo"
 
         />
 
     <TextView
         android:id="@+id/advertListOfGenres"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="value"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:layout_alignParentRight="true"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+
+        android:textAlignment="center"
+        android:gravity="center"
+        android:background="@color/background"
+
+        android:text="Client id"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
 
         android:layout_below="@+id/advertClientId"
 
@@ -109,13 +139,16 @@
 
     <TextView
         android:id="@+id/advertListOfStyles"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="value"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:layout_alignParentRight="true"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+
+        android:textAlignment="center"
+        android:gravity="center"
+        android:background="@color/background"
+        android:text="List of genres"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
 
         android:layout_below="@+id/advertListOfGenres"
 

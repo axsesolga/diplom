@@ -1,9 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateAdvertActivity">
+    tools:context=".solo_activities.AdvertInfoActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <EditText
+        android:id="@+id/AdvertCreateDesiredValue"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+
+        android:textAlignment="center"
+        android:gravity="center"
+        android:background="@color/background"
+
+
+        android:hint="desired value"
+
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+
+
+
+        />
+
+
+    <EditText
+        android:id="@+id/AdvertCreateTitle"
+
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+
+        android:textAlignment="center"
+        android:gravity="center"
+        android:background="@color/background"
+
+        android:hint="title"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+
+        android:layout_below="@+id/AdvertCreateDesiredValue"
+
+        />
+
+    <EditText
+        android:id="@+id/AdvertCreateDescription"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+
+        android:textAlignment="center"
+        android:gravity="center"
+        android:background="@color/background"
+        android:hint="descripton"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+
+        android:layout_below="@+id/AdvertCreateTitle"
+
+        />
+
+    <EditText
+        android:id="@+id/AdvertCreateAdditionalInfo"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+
+        android:textAlignment="center"
+        android:gravity="center"
+        android:background="@color/background"
+        android:hint="add info"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+
+        android:layout_below="@+id/AdvertCreateDescription"
+
+        />
+
+
+
+    <Button
+        android:id="@+id/AdvertCreateSelectStyles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:text="select styles"
+        android:layout_below="@id/AdvertCreateAdditionalInfo"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="selected styles"
+        android:layout_toRightOf="@id/AdvertCreateSelectStyles"
+        android:layout_alignBaseline="@id/AdvertCreateSelectStyles"
+    />
+
+
+
+    <Button
+        android:id="@+id/AdvertCreateSelectGenres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:text="select genres"
+        android:layout_below="@id/AdvertCreateSelectStyles"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="selected genres"
+        android:layout_toRightOf="@id/AdvertCreateSelectGenres"
+        android:layout_alignBaseline="@id/AdvertCreateSelectGenres"
+        />
+
+</RelativeLayout>
