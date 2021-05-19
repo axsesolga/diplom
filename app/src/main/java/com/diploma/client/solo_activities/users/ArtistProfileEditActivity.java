@@ -86,6 +86,7 @@ public class ArtistProfileEditActivity extends AppCompatActivity {
                     new SaveClient().execute(artist).get();
 
                     MainActivity.updateUser();
+                    Toast.makeText(getApplicationContext(), "Изменения сохранены.", Toast.LENGTH_LONG).show();
 
 
                 } catch (ExecutionException e) {
