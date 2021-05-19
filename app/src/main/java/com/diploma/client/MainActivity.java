@@ -66,7 +66,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initButtons();
         // need to init Genres Types Styles, almost non changing values. Update per app run is enough
-        new getStaticArtworkData().execute(); // todo get
+        try {
+            new getStaticArtworkData().execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         updateAdvertsPictures();
         updateMessagesAndUsers();
 

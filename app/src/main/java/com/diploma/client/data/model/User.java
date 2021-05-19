@@ -34,10 +34,7 @@ public class User {
         this.name = name;
         this.profilePictureUrl = profilePictureUrl;
 
-        //todo remove
-        if (BuildConfig.DEBUG && !(userType.equals("Client") || userType.equals("Artist"))) {
-            throw new AssertionError("Assertion failed");
-        }
+
 
         this.userType = userType;
     }

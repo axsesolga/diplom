@@ -43,8 +43,6 @@ public class API {
 
         Integer userId = Integer.parseInt(Network.doPostRequest(requesUrl, json));
 
-        // login successful, lets get user data
-        // todo сделать новый post запрос на сервере чтобы получить всю инфу о юзере
         for (User user : getAllArtists()) {
             if (user.user_id == userId)
                 return user;
