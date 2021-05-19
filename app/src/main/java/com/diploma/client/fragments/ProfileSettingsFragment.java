@@ -45,8 +45,8 @@ public class ProfileSettingsFragment extends Fragment {
             public void onClick(View v) {
                 if (MainActivity.getUser().isArtist())
                     startActivity(new Intent(getActivity(), ArtistProfileEditActivity.class));
-                else
-                    startActivity(new Intent(getActivity(), ClientProfileEditActivity.class));
+                //else
+                    //startActivity(new Intent(getActivity(), ClientProfileEditActivity.class));
             }
         });
 

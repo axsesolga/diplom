@@ -60,18 +60,7 @@
         android:layout_below="@+id/profileClientType"
         />
 
-    <TextView
-        android:id="@+id/profileClientPictureUrl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="AVATAR"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
 
-        android:layout_below="@+id/profileClientName"
-        />
 
     <TextView
         android:id="@+id/clientFavouriteArtists"
@@ -83,7 +72,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
 
-        android:layout_below="@+id/profileClientPictureUrl"
+        android:layout_below="@+id/profileClientName"
         />
 
 
@@ -116,10 +105,11 @@
 
 
     <Button
-        android:id="@+id/clientLogOut"
+        android:id="@+id/sendMessageClientButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-
+        android:visibility="gone"
+        android:enabled="false"
+        android:text="SendMessage"
         android:layout_alignParentBottom="true"/>
 </RelativeLayout>

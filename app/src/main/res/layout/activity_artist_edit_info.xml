@@ -23,146 +23,81 @@
             android:paddingBottom="15dp"
             android:scrollbars="vertical">
 
-            <TextView
-                android:id="@+id/profileArtistUsername"
+
+
+
+
+            <EditText
+                android:id="@+id/artistProfileNicknameEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
                 android:gravity="center"
-
-                android:text="USERNAME"
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/profileArtistMail"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-
-                android:layout_below="@+id/profileArtistUsername"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:background="@color/background"
-                android:gravity="center"
-                android:text="MAIL"
+                android:hint="NICKNAME"
 
                 android:textAlignment="center" />
 
-
-            <TextView
-                android:id="@+id/profileArtistType"
+            <EditText
+                android:id="@+id/artistProfileVKurlEdit"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
 
-                android:layout_below="@+id/profileArtistMail"
+                android:layout_below="@id/artistProfileNicknameEdit"
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
                 android:gravity="center"
-                android:text="USERTYPE"
+                android:hint="VK"
 
                 android:textAlignment="center" />
 
-            <TextView
-                android:id="@+id/profileArtistName"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
 
-                android:layout_below="@+id/profileArtistType"
+            <EditText
+                android:id="@+id/artistProfileASurlEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@id/artistProfileVKurlEdit"
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
                 android:gravity="center"
-                android:text="FULL NAME"
+                android:hint="ARTSTATION"
 
                 android:textAlignment="center" />
 
-
-
-            <TextView
-                android:id="@+id/artistProfileNickname"
+            <EditText
+                android:id="@+id/artistProfileOtherUrlEdit"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
 
-                android:layout_below="@+id/profileArtistName"
+                android:layout_below="@id/artistProfileASurlEdit"
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
                 android:gravity="center"
-                android:text="NICKNAME"
-
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/artistProfileVKurl"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-
-                android:layout_below="@+id/artistProfileNickname"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:background="@color/background"
-                android:gravity="center"
-                android:text="VK"
+                android:hint="OTHER URL"
 
                 android:textAlignment="center" />
 
 
-            <TextView
-                android:id="@+id/artistProfileASurl"
+            <CheckBox
+                android:id="@+id/artistProfileAvailableEdit"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
 
-                android:layout_below="@+id/artistProfileVKurl"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:background="@color/background"
-                android:gravity="center"
-                android:text="ARTSTATION"
-
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/artistProfileOtherUrl"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-
-                android:layout_below="@+id/artistProfileASurl"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:background="@color/background"
-                android:gravity="center"
-                android:text="OTHER URL"
-
-                android:textAlignment="center" />
-
-
-            <TextView
-                android:id="@+id/artistProfileAvailable"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-
-                android:layout_below="@+id/artistProfileOtherUrl"
+                android:layout_below="@id/artistProfileOtherUrlEdit"
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
@@ -174,12 +109,28 @@
                 android:textAlignment="center" />
 
 
-            <TextView
-                android:id="@+id/artistProfileGenres"
+            <Button
+                android:id="@+id/artistProfileGenresEdit"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
 
-                android:layout_below="@+id/artistProfileAvailable"
+                android:layout_below="@id/artistProfileAvailableEdit"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:background="@color/background"
+                android:gravity="center"
+                android:text="GENRES SELECT"
+
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/artistProfileGenresEditView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@id/artistProfileGenresEdit"
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
@@ -191,12 +142,28 @@
                 android:textAlignment="center" />
 
 
-            <TextView
-                android:id="@+id/artistProfileStyles"
+            <Button
+                android:id="@+id/artistProfileStylesEdit"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
 
-                android:layout_below="@+id/artistProfileGenres"
+                android:layout_below="@id/artistProfileGenresEditView"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:background="@color/background"
+                android:gravity="center"
+                android:text="STYLES SELECT"
+
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/artistProfileStylesEditView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@id/artistProfileStylesEdit"
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
@@ -207,88 +174,40 @@
 
                 android:textAlignment="center" />
 
-            <TextView
-                android:id="@+id/artistProfileExclusions"
+            <EditText
+                android:id="@+id/artistProfileExclusionsEdit"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
 
-                android:layout_below="@+id/artistProfileStyles"
+                android:layout_below="@id/artistProfileStylesEditView"
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
                 android:gravity="center"
-                android:text="EXCLUSIONS"
+                android:hint="EXCLUSIONS"
 
                 android:textAlignment="center" />
 
-            <TextView
-                android:id="@+id/artistProfilePrice"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-
-                android:layout_below="@+id/artistProfileExclusions"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:background="@color/background"
-                android:gravity="center"
-                android:text="PRICE"
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/profileArtistId"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-
-                android:layout_below="@+id/artistProfilePrice"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:background="@color/background"
-                android:gravity="center"
-                android:text="Artist ID"
-
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/profileArtistUserId"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-
-                android:layout_below="@+id/profileArtistId"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:background="@color/background"
-                android:gravity="center"
-                android:text="User ID"
-
-                android:textAlignment="center" />
 
 
             <Button
-                android:id="@+id/sendMessageArtistButton"
+                android:id="@+id/artistConfirmEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:enabled="false"
 
-                android:layout_below="@+id/profileArtistUserId"
+                android:layout_below="@id/artistProfileExclusionsEdit"
+
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
-
                 android:gravity="center"
 
 
-                android:text="Button"
+                android:text="Save"
                 android:textAlignment="center" />
         </RelativeLayout>
     </ScrollView>

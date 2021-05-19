@@ -16,7 +16,6 @@ import java.util.ArrayList;
 
 public class ChatListUsersListAdapter extends RecyclerView.Adapter<ChatListUsersListAdapter.UserChatViewHolder> {
     ArrayList<User> users;
-    ViewGroup parent;
 
     public ChatListUsersListAdapter(ArrayList<User> users) {
         this.users = users;

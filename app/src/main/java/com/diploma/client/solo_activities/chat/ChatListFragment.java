@@ -26,11 +26,10 @@ public class ChatListFragment extends Fragment {
     ArrayList<User> users = new ArrayList<>();
 
     private RecyclerView rv_UsersList;
-    private ChatListUsersListAdapter numbersAdapter;
 
     void updateAllUsers() {
         users_set = new HashSet<>();
-        MainActivity.updateMessages();
+        MainActivity.updateMessagesAndUsers();
         for (UserChatMessage userChatMessage : MainActivity.messages) {
             int second_user = userChatMessage.senderId == mainUserId ? userChatMessage.receiverId : userChatMessage.senderId;
             if (second_user != mainUserId) {
@@ -45,6 +44,12 @@ public class ChatListFragment extends Fragment {
 
     public ChatListFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateAllUsers();
     }
 
     @Override
@@ -84,7 +89,5 @@ public class ChatListFragment extends Fragment {
         return v;
     }
 
-/*
-    */
 }
 

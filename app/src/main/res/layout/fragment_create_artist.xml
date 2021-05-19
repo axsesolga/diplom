@@ -5,18 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".fragments.CreateArtistFragment">
 
-    <EditText
-        android:id="@+id/pictureUploadArtistId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="artist id"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-
-        android:layout_alignParentTop="true"
-
-        />
 
     <EditText
         android:id="@+id/pictureUploadDescription"
@@ -26,29 +14,46 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
-        android:layout_below="@+id/pictureUploadArtistId"
         />
 
-    <EditText
-        android:id="@+id/pictureUploadGenres"
+    <Button
+        android:id="@+id/pictureSelectGenresButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="genre id"
+        android:text="genre"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
         android:layout_below="@+id/pictureUploadDescription"
         />
 
-    <EditText
-        android:id="@+id/pictureUploadStyles"
+    <TextView
+        android:id="@+id/pictureShowGenres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="style id"
+        android:text="selected styles"
+        android:layout_toRightOf="@id/pictureSelectGenresButton"
+        android:layout_alignBaseline="@id/pictureSelectGenresButton"
+        />
+
+    <Button
+        android:id="@+id/pictureSelectStylesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="style"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
-        android:layout_below="@+id/pictureUploadGenres"
+        android:layout_below="@+id/pictureSelectGenresButton"
+        />
+
+    <TextView
+        android:id="@+id/pictureShowStyles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="selected styles"
+        android:layout_toRightOf="@id/pictureSelectStylesButton"
+        android:layout_alignBaseline="@id/pictureSelectStylesButton"
         />
 
     <Button
@@ -59,7 +64,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
-        android:layout_below="@+id/pictureUploadStyles"
+        android:layout_below="@+id/pictureSelectStylesButton"
         />
 
     <Button
@@ -75,12 +80,12 @@
 
     <TextView
         android:id="@+id/filePath"
-        android:layout_width="314dp"
-        android:layout_height="270dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/createPicture"
         android:layout_marginStart="24dp"
         android:layout_marginTop="6dp"
         android:layout_marginEnd="24dp"
-        android:hint="style id" />
+        android:hint="base64str preview" />
 
 </RelativeLayout>

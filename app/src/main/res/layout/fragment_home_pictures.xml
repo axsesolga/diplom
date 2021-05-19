@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main_menu.HomeFragmentAdverts">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_pictures"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rel"/>
+
+        <RelativeLayout
+            android:id="@+id/rel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <Button
+                android:id="@+id/searchPicturesGenres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="select\ngenres"
+                />
+
+            <Button
+                android:id="@+id/searchPicturesStyles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/searchPicturesGenres"
+                android:text="select\nstyles"
+                />
+
+
+            <TextView
+                android:id="@+id/pictureSearchShowGenres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="genres:all"
+                android:layout_toRightOf="@+id/searchPicturesStyles"
+
+                />
+            <TextView
+                android:id="@+id/pictureSearchShowStyles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/searchPicturesStyles"
+                android:text="styles:all"
+                android:layout_below="@id/pictureSearchShowGenres"
+
+
+                />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

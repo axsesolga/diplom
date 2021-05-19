@@ -35,8 +35,16 @@ public class Network {
             .build();
 
     public static String doGetRequest(String url) throws IOException, SecurityException {
+        String csrfmiddlewaretoken = "dummy";
+        for (Cookie cookie : cookieJar.loadForRequest(HttpUrl.parse(url))) {
+            if (cookie.name().contains("csrf")) {
+                csrfmiddlewaretoken = cookie.value();
+                break;
+            }
+        }
         Request request = new Request.Builder()
                 .url(url)
+                .addHeader("X-CSRFToken", csrfmiddlewaretoken)
                 .build();
         try {
             okhttp3.Response response = httpClient.newCall(request).execute();

@@ -6,30 +6,25 @@
     android:orientation="vertical">
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/search_bar"
-        android:id="@+id/main_pictures_recycler_view"
-        />
-
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/search_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="saerch bar"
-        android:layout_alignStart="@id/button"
-        android:layout_alignParentStart="true"
-
-        />
-
-
     <Button
-        android:id="@+id/button"
+        android:id="@+id/homeButtonPictures"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="open filter\nactivity"
+        android:layout_alignParentLeft="true"
+        android:text="pictures" />
+
+    <Button
+        android:id="@+id/homeButtonAdverts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:text="adverts" />
+
+
+    <FrameLayout
+        android:id="@+id/home_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/homeButtonAdverts"
         />
 </RelativeLayout>

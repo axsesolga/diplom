@@ -1,7 +1,5 @@
 package com.diploma.client.solo_activities.users;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -9,51 +7,60 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.diploma.client.MainActivity;
 import com.diploma.client.R;
 import com.diploma.client.data.LoginDataSource;
 import com.diploma.client.data.LoginRepository;
 import com.diploma.client.data.model.Client;
 import com.diploma.client.network.API;
-
-import java.io.IOException;
+import com.diploma.client.solo_activities.chat.UserChat;
 
 public class ClientProfileInfoActivity extends AppCompatActivity {
-    Client client = (Client) LoginRepository.getInstance(new LoginDataSource()).getUser();
+    Client main_client;
     Context context;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_profile);
         context = this;
+        String extra = getIntent().getStringExtra("OTHER_CLIENT_INFO");
+        if (extra != null) {
+            main_client = MainActivity.getClientByClientId(Integer.parseInt(extra));
+
+            if (MainActivity.getUser() != null && MainActivity.getUser().user_id != main_client.user_id) {
+                Button send_message = (Button) findViewById(R.id.sendMessageClientButton);
+                send_message.setVisibility(View.VISIBLE);
+                send_message.setEnabled(true);
+                send_message.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getApplicationContext(), UserChat.class);
+                        intent.putExtra("EXTRA_SECOND_USER", String.valueOf(main_client.user_id));
+                        startActivity(intent);
+                    }
+                });
+            }
 
 
-        ((TextView) findViewById(R.id.profileClientId)).setText(Integer.toString(client.client_id));
-        ((TextView) findViewById(R.id.profileClientUserId)).setText(Integer.toString(client.user_id));
+        } else
+            main_client = (Client) MainActivity.getUser();
 
-        ((TextView) findViewById(R.id.profileClientUsername)).setText(client.login);
-        ((TextView) findViewById(R.id.profileClientMail)).setText(client.login);
-        ((TextView) findViewById(R.id.profileClientName)).setText(client.name);
-        ((TextView) findViewById(R.id.profileClientPictureUrl)).setText(client.profilePictureUrl);
-        ((TextView) findViewById(R.id.profileClientType)).setText(client.userType);
+
+        ((TextView) findViewById(R.id.profileClientUsername)).setText(main_client.login);
+        ((TextView) findViewById(R.id.profileClientMail)).setText(main_client.login);
+        ((TextView) findViewById(R.id.profileClientName)).setText(main_client.name);
+        ((TextView) findViewById(R.id.profileClientType)).setText(main_client.userType);
 
         StringBuilder favs = new StringBuilder();
-        for (int id : client.favouriteArtsitsIDs)
+        for (int id : main_client.favouriteArtsitsIDs)
             favs.append(id);
 
         ((TextView) findViewById(R.id.clientFavouriteArtists)).setText(favs);
-
-        //logout
-        Button logOutButton = (Button) findViewById(R.id.clientLogOut);
-        logOutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new logoutAsynch().execute();
-                finish();
-            }
-        });
     }
 
     static class logoutAsynch extends AsyncTask<Void, Void, Void> {

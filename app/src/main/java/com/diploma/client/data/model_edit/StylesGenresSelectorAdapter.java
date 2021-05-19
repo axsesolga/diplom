@@ -1,5 +1,7 @@
 package com.diploma.client.data.model_edit;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -8,34 +10,56 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.diploma.client.MainActivity;
 import com.diploma.client.R;
 import com.diploma.client.data.model.Artwork;
-import com.diploma.client.data.model.User;
+import com.diploma.client.solo_activities.chat.ChatListUsersListAdapter;
 
 import java.util.ArrayList;
 
 
-public class StylesGenresAdapter extends RecyclerView.Adapter<StylesGenresAdapter.ViewHolder>
+public class StylesGenresSelectorAdapter extends RecyclerView.Adapter<StylesGenresSelectorAdapter.ViewHolder>
 {
-    ArrayList<Artwork.ArtworkProperties> styles;
+    public ArrayList<Artwork.ArtworkProperties> sg_items;
+    public boolean[] checked;
+
+    public StylesGenresSelectorAdapter(ArrayList<? extends Artwork.ArtworkProperties> sg) {
+        this.sg_items = (ArrayList<Artwork.ArtworkProperties>) sg;
+        checked = new boolean[sg_items.size()];
+    }
 
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+
+        Context context = parent.getContext();
+        int layoutIdForListItem = R.layout.genre_style_rv_card;
+
+        LayoutInflater inflater = LayoutInflater.from(context);
+
+        View view = inflater.inflate(layoutIdForListItem, parent, false);
+        return new StylesGenresSelectorAdapter.ViewHolder(view);
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.bind(sg_items.get(position));
 
+        holder.gs_CheckBox.setChecked(checked[position]);
+        holder.gs_CheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checked[position] = !checked[position];
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return styles.size();
+        return sg_items.size();
     }
+
 
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -51,7 +75,6 @@ public class StylesGenresAdapter extends RecyclerView.Adapter<StylesGenresAdapte
             gs_Name = itemView.findViewById(R.id.gs_Name);
             gs_Description = itemView.findViewById(R.id.gs_Description);
             gs_CheckBox = itemView.findViewById(R.id.gs_CheckBox);
-
         }
 
         void bind(Artwork.ArtworkProperties ap) {

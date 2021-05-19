@@ -26,7 +26,7 @@ public class Artwork {
             super(id, name, description);
         }
 
-        public Genre getById(int id) {
+        public static Genre getById(int id) {
             for (Genre genre : allGenres) {
                 if (genre.id == id)
                     return genre;
@@ -48,9 +48,7 @@ public class Artwork {
     {
         public static ArrayList<Type> allTypes;
 
-        private int id;
-        private String name;
-        private String description;
+
 
         public Type(int id, String name, String description) {
             super(id, name, description);
@@ -76,15 +74,12 @@ public class Artwork {
     public static class Style extends ArtworkProperties{
         public static ArrayList<Style> allStyles;
 
-        public int id;
-        private String name;
-        private String description;
 
         public Style(int id, String name, String description) {
             super(id, name, description);
         }
 
-        public static Style   getById(int id) {
+        public static Style getById(int id) {
             for (Style style : allStyles) {
                 if (style.id == id)
                     return style;

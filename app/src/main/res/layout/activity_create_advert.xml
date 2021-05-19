@@ -96,6 +96,7 @@
         />
 
     <TextView
+        android:id="@+id/AdvertCreateShowStyles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="selected styles"
@@ -117,11 +118,24 @@
         />
 
     <TextView
+        android:id="@+id/AdvertCreateShowGenres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="selected genres"
         android:layout_toRightOf="@id/AdvertCreateSelectGenres"
         android:layout_alignBaseline="@id/AdvertCreateSelectGenres"
+        />
+
+
+    <Button
+        android:id="@+id/createAdvertButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="create"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:layout_below="@id/AdvertCreateSelectGenres"
         />
 
 </RelativeLayout>

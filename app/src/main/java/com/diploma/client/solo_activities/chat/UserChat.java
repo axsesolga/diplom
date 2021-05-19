@@ -26,7 +26,7 @@ public class UserChat extends AppCompatActivity {
     User secondUser;
 
     static ArrayList<UserChatMessage> getAllMessages() {
-        MainActivity.updateMessages();
+        MainActivity.updateMessagesAndUsers();
         return MainActivity.messages;
     }
 

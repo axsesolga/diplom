@@ -43,6 +43,10 @@ public class LoginRepository {
         return user;
     }
 
+    public void updateUser(User user) {
+        this.user = user;
+    }
+
     public Result<User> login(String username, String password) {
         // handle login
         Result<User> result = dataSource.login(username, password);

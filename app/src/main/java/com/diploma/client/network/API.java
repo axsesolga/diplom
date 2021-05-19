@@ -1,7 +1,9 @@
 package com.diploma.client.network;
 
 import com.diploma.client.data.model.Advert;
+import com.diploma.client.data.model.Artist;
 import com.diploma.client.data.model.Artwork;
+import com.diploma.client.data.model.Client;
 import com.diploma.client.data.model.Picture;
 import com.diploma.client.data.model.User;
 import com.diploma.client.solo_activities.chat.UserChatMessage;
@@ -137,6 +139,7 @@ public class API {
             genres.append(genre.id);
             genres.append(",");
         }
+        genres.deleteCharAt(genres.length() - 1).toString();
         genres.append("]");
 
         StringBuilder styles = new StringBuilder();
@@ -145,15 +148,19 @@ public class API {
             styles.append(style.id);
             styles.append(",");
         }
-        genres.append("]");
+        styles.deleteCharAt(styles.length() - 1).toString();
+        styles.append("]");
 
         String json = getJson(new HashMap<String, String>() {{
             put("image", picture.base64string);
             put("description", picture.description);
             put("artist_id", Integer.toString(picture.artist_id));
-            put("list_of_genres", genres.toString());
-            put("list_of_styles", styles.toString());
+            put("list_of_genres", "GENRES_LIST");
+            put("list_of_styles", "STYLES_LIST");
         }});
+
+        json = json.replace("\"GENRES_LIST\"", genres.toString());
+        json = json.replace("\"STYLES_LIST\"", styles.toString());
 
         if (!Network.doPostRequest(requesUrl, json).contains("\"id\":"))
             throw new IOException("ivalid data, can not create image");
@@ -173,8 +180,115 @@ public class API {
             throw new IOException("ivalid data, can not send message");
     }
 
-    public static void createAdvert()
-    {
-        String requesUrl = Network.homeUrl + "chat-message/create/";
+
+    public static void createAdvert(Advert advert) throws IOException {
+        String requesUrl = Network.homeUrl + "advertisement/create/";
+
+        StringBuilder genres = new StringBuilder();
+        genres.append("[");
+        for (Artwork.Genre genre : advert.genres) {
+            genres.append(genre.id);
+            genres.append(",");
+        }
+        genres.deleteCharAt(genres.length() - 1).toString();
+        genres.append("]");
+
+        StringBuilder styles = new StringBuilder();
+        styles.append("[");
+        for (Artwork.Style style : advert.styles) {
+            styles.append(style.id);
+            styles.append(",");
+        }
+        styles.deleteCharAt(styles.length() - 1).toString();
+        styles.append("]");
+
+
+        String json = getJson(new HashMap<String, String>() {{
+            put("title", advert.title);
+            put("description", advert.description);
+            put("client_id", Integer.toString(advert.client_id));
+            put("list_of_genres", "GENRES_LIST");
+            put("list_of_styles", "STYLES_LIST");
+            put("additional_information", advert.additional_information);
+            put("desired_value", String.valueOf(advert.desired_value));
+        }});
+
+        json = json.replace("\"GENRES_LIST\"", genres.toString());
+        json = json.replace("\"STYLES_LIST\"", styles.toString());
+
+        if (!Network.doPostRequest(requesUrl, json).contains("\"id\":"))
+            throw new IOException("ivalid data, can not create advert");
+
+    }
+
+    public static void updateBaseUser(Client client) throws IOException {
+
+        String requesUrl = Network.homeUrl + "base-user/update/" + String.valueOf(client.client_id) + "/";
+
+        String json = getJson(new HashMap<String, String>() {{
+            put("email", client.mail);
+            put("full_name", client.name);
+            put("picture_url", client.profilePictureUrl);
+            put("username", client.login);
+            put("user_type", client.userType);
+        }});
+
+        String res = Network.doPostRequest(requesUrl, json); // if ok no exception thrown
+    }
+
+
+
+    public static void updateClient(Client client) throws IOException {
+
+        String requesUrl = Network.homeUrl + "user/update/" + String.valueOf(client.client_id) + "/";
+
+        String json = getJson(new HashMap<String, String>() {{
+            //put("list_of_featured_artists", client.favouriteArtsitsIDs);
+            put("user_id", String.valueOf(client.user_id));
+        }});
+
+        String res = Network.doPostRequest(requesUrl, json); // if ok no exception thrown
+    }
+
+    public static void updateArtist(Artist artist) throws IOException {
+        String requesUrl = Network.homeUrl + "artist-profile/update/" + String.valueOf(artist.artist_id) + "/";
+
+        StringBuilder genres = new StringBuilder();
+        genres.append("[");
+        for (Artwork.Genre genre : artist.genres) {
+            genres.append(genre.id);
+            genres.append(",");
+        }
+        genres.deleteCharAt(genres.length() - 1).toString();
+        genres.append("]");
+
+        StringBuilder styles = new StringBuilder();
+        styles.append("[");
+        for (Artwork.Style style : artist.styles) {
+            styles.append(style.id);
+            styles.append(",");
+        }
+        styles.deleteCharAt(styles.length() - 1).toString();
+        styles.append("]");
+
+        String json = getJson(new HashMap<String, String>() {{
+            put("user_id", String.valueOf(artist.user_id));
+            put("nickname", artist.nickname);
+            put("url_to_VK", artist.VkUrl);
+            put("url_to_ArtStation", artist.ArtStationUrl);
+            put("url_to_Other", artist.OtherUrl);
+            put("is_available", artist.available ? "true":"false");
+            put("list_of_genres", "GENRES_LIST");
+            put("list_of_styles", "STYLES_LIST");
+            put("description_of_forbidden_topics", artist.exclusions);
+            put("description_of_additional_conditions", artist.exclusions);
+            put("type_to_price", "PRICE_LIST");
+        }});
+
+        json = json.replace("\"GENRES_LIST\"", genres.toString());
+        json = json.replace("\"STYLES_LIST\"", styles.toString());
+        json = json.replace("\"PRICE_LIST\"", "[]");
+
+        String res = Network.doPostRequest(requesUrl, json); // if ok no exception thrown
     }
 }

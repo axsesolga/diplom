@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,39 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
 
-        android:textAlignment="center"
-        android:gravity="center"
-
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
+
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
-
         android:background="@color/background"
+        android:gravity="center"
 
-        android:text="USERNAME"
-
-
-        />
-
-
-    <TextView
-        android:id="@+id/AdvertCreateDesiredValue"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:text="ID"
 
         android:textAlignment="center"
-        android:gravity="center"
-        android:background="@color/background"
 
-
-        android:text="advert id"
-
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-
-
-        android:layout_below="@+id/advertId"
 
         />
 
@@ -54,16 +31,16 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
 
-        android:textAlignment="center"
-        android:gravity="center"
-        android:background="@color/background"
-
-        android:text="Desired Value"
+        android:layout_below="@id/advertId"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
 
-        android:layout_below="@+id/AdvertCreateDesiredValue"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:background="@color/background"
+        android:gravity="center"
+        android:text="Desired Value"
+
+        android:textAlignment="center"
 
         />
 
@@ -72,15 +49,15 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
 
-        android:textAlignment="center"
-        android:gravity="center"
-        android:background="@color/background"
-        android:text="Title"
+        android:layout_below="@id/AdvertCreateTitle"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:background="@color/background"
+        android:gravity="center"
+        android:text="Title"
 
-        android:layout_below="@+id/AdvertCreateTitle"
+        android:textAlignment="center"
 
         />
 
@@ -89,33 +66,33 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
 
-        android:textAlignment="center"
-        android:gravity="center"
-        android:background="@color/background"
-        android:text="Description"
+        android:layout_below="@id/AdvertCreateDescription"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:background="@color/background"
+        android:gravity="center"
+        android:text="Description"
 
-        android:layout_below="@+id/AdvertCreateDescription"
+        android:textAlignment="center"
 
         />
 
-    <TextView
-        android:id="@+id/advertClientId"
+    <Button
+        android:id="@+id/advertClientIdButton"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
 
-        android:textAlignment="center"
-        android:gravity="center"
-        android:background="@color/background"
-
-        android:text="Additional info"
+        android:layout_below="@id/AdvertCreateAdditionalInfo"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
 
-        android:layout_below="@+id/AdvertCreateAdditionalInfo"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:background="@color/background"
+        android:gravity="center"
+        android:text="Создатель"
+
+        android:textAlignment="center"
 
         />
 
@@ -124,16 +101,16 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
 
-        android:textAlignment="center"
-        android:gravity="center"
-        android:background="@color/background"
-
-        android:text="Client id"
+        android:layout_below="@id/advertClientIdButton"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
 
-        android:layout_below="@+id/advertClientId"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:background="@color/background"
+        android:gravity="center"
+        android:text="List if genres"
+
+        android:textAlignment="center"
 
         />
 
@@ -142,18 +119,17 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
 
-        android:textAlignment="center"
-        android:gravity="center"
-        android:background="@color/background"
-        android:text="List of genres"
+        android:layout_below="@id/advertListOfGenres"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:background="@color/background"
+        android:gravity="center"
+        android:text="List of styles"
 
-        android:layout_below="@+id/advertListOfGenres"
+        android:textAlignment="center"
 
         />
-
 
 
 </RelativeLayout>
