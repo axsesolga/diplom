@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".solo_activities.users.ArtistProfileInfoActivity">
 
 
@@ -24,7 +23,135 @@
             android:scrollbars="vertical">
 
             <TextView
+                android:id="@+id/t1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_alignBottom="@id/profileArtistUsername"
+                android:text="ID:\t"
+                />
+
+            <TextView
+                android:id="@+id/t2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_alignBottom="@id/profileArtistMail"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="Почта:\t"
+                />
+
+            <TextView
+                android:id="@+id/t3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_alignBottom="@id/profileArtistName"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="Полное имя:\t"
+                />
+
+            <TextView
+                android:id="@+id/t4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_alignBottom="@id/artistProfileNickname"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="Никнейм:\t"
+                />
+
+
+
+            <TextView
+                android:id="@+id/t5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_alignBottom="@id/artistProfileVKurl"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="Ссылка на ВК:\t"
+                />
+
+            <TextView
+                android:id="@+id/t6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_alignBottom="@id/artistProfileASurl"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="Ссылка на ArtStation:\t"
+                />
+
+            <TextView
+                android:id="@+id/t7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_alignBottom="@id/artistProfileOtherUrl"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="Ссылка на другую сеть:\t"
+                />
+
+            <TextView
+                android:id="@+id/t8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_alignBottom="@id/artistProfileAvailable"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="Статус:\t"
+                />
+
+            <TextView
+                android:id="@+id/t9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_alignBottom="@id/artistProfileGenres"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="Жанры:\t"
+                />
+
+            <TextView
+                android:id="@+id/t10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_alignBottom="@id/artistProfileStyles"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="Стили:\t"
+                />
+
+            <TextView
+                android:id="@+id/t11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_alignBottom="@id/artistProfileExclusions"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="Запретные темы:\t"
+                />
+
+
+
+
+
+            <TextView
                 android:id="@+id/profileArtistUsername"
+                android:layout_toRightOf="@id/t1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -42,7 +169,8 @@
             <TextView
                 android:id="@+id/profileArtistMail"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_toRightOf="@id/t2"
+                android:layout_height="wrap_content"
 
                 android:layout_below="@+id/profileArtistUsername"
                 android:layout_alignParentRight="true"
@@ -58,27 +186,12 @@
 
 
             <TextView
-                android:id="@+id/profileArtistType"
+                android:id="@+id/profileArtistName"
+                android:layout_toRightOf="@id/t3"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
 
                 android:layout_below="@+id/profileArtistMail"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:background="@color/background"
-                android:gravity="center"
-                android:text="USERTYPE"
-
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/profileArtistName"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-
-                android:layout_below="@+id/profileArtistType"
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
@@ -90,11 +203,11 @@
                 android:textAlignment="center" />
 
 
-
             <TextView
                 android:id="@+id/artistProfileNickname"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_toRightOf="@id/t4"
+                android:layout_height="wrap_content"
 
                 android:layout_below="@+id/profileArtistName"
                 android:layout_alignParentRight="true"
@@ -109,8 +222,9 @@
 
             <TextView
                 android:id="@+id/artistProfileVKurl"
+                android:layout_toRightOf="@id/t5"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
 
                 android:layout_below="@+id/artistProfileNickname"
                 android:layout_alignParentRight="true"
@@ -127,7 +241,8 @@
             <TextView
                 android:id="@+id/artistProfileASurl"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_toRightOf="@id/t6"
+                android:layout_height="wrap_content"
 
                 android:layout_below="@+id/artistProfileVKurl"
                 android:layout_alignParentRight="true"
@@ -143,7 +258,8 @@
             <TextView
                 android:id="@+id/artistProfileOtherUrl"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_toRightOf="@id/t7"
+                android:layout_height="wrap_content"
 
                 android:layout_below="@+id/artistProfileASurl"
                 android:layout_alignParentRight="true"
@@ -160,7 +276,8 @@
             <TextView
                 android:id="@+id/artistProfileAvailable"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_toRightOf="@id/t8"
+                android:layout_height="wrap_content"
 
                 android:layout_below="@+id/artistProfileOtherUrl"
                 android:layout_alignParentRight="true"
@@ -177,9 +294,10 @@
             <TextView
                 android:id="@+id/artistProfileGenres"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/t9"
 
-                android:layout_below="@+id/artistProfileAvailable"
+                android:layout_below="@id/artistProfileAvailable"
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
@@ -194,9 +312,10 @@
             <TextView
                 android:id="@+id/artistProfileStyles"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
 
-                android:layout_below="@+id/artistProfileGenres"
+                android:layout_toRightOf="@id/t10"
+                android:layout_below="@id/artistProfileGenres"
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
@@ -210,10 +329,11 @@
             <TextView
                 android:id="@+id/artistProfileExclusions"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
 
-                android:layout_below="@+id/artistProfileStyles"
+                android:layout_below="@id/artistProfileStyles"
                 android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/t11"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
@@ -223,73 +343,26 @@
 
                 android:textAlignment="center" />
 
-            <TextView
-                android:id="@+id/artistProfilePrice"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-
-                android:layout_below="@+id/artistProfileExclusions"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:background="@color/background"
-                android:gravity="center"
-                android:text="PRICE"
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/profileArtistId"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-
-                android:layout_below="@+id/artistProfilePrice"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:background="@color/background"
-                android:gravity="center"
-                android:text="Artist ID"
-
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/profileArtistUserId"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-
-                android:layout_below="@+id/profileArtistId"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                android:background="@color/background"
-                android:gravity="center"
-                android:text="User ID"
-
-                android:textAlignment="center" />
-
 
             <Button
                 android:id="@+id/sendMessageArtistButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:enabled="false"
-
-                android:layout_below="@+id/profileArtistUserId"
+                android:layout_below="@id/artistProfileExclusions"
                 android:layout_alignParentBottom="true"
+
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
-
+                android:enabled="false"
                 android:gravity="center"
 
-
                 android:text="Button"
-                android:textAlignment="center" />
+
+
+                android:textAlignment="center"
+                android:visibility="gone" />
         </RelativeLayout>
     </ScrollView>
 

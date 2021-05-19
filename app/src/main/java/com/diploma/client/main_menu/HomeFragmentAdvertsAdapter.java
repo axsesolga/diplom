@@ -16,7 +16,6 @@ import com.diploma.client.R;
 import com.diploma.client.data.model.Advert;
 import com.diploma.client.data.model.Artwork;
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 
 public class HomeFragmentAdvertsAdapter extends RecyclerView.Adapter<HomeFragmentAdvertsAdapter.AdvertViewHolder> implements Filterable {
@@ -79,34 +78,45 @@ public class HomeFragmentAdvertsAdapter extends RecyclerView.Adapter<HomeFragmen
         }
 
         if (this.min_value > this.max_value)
-            throw new InvalidParameterException("Wrong desired price range.");
+            this.max_value = 10000000;
 
     }
 
 
     private boolean checkFilters(Advert advert) {
-        int return_value = 0;
 
         // 1
         if (genres != null) {
-            for (Artwork.Genre genre : advert.genres)
-                for (Artwork.Genre _genre : genres)
-                    if (genre.id == _genre.id)
-                        return_value += 1;
-        } else return_value += 1;
+            for (Artwork.Genre _genre : genres) {
+                boolean found = false;
+                for (Artwork.Genre genre : advert.genres)
+                    if (genre.id == _genre.id) {
+                        found = true;
+                        break;
+                    }
+                if (!found)
+                    return false;
+            }
+        }
 
         // 2
         if (styles != null) {
-            for (Artwork.Style style : advert.styles)
-                for (Artwork.Style _style : styles)
-                    if (style.id == _style.id)
-                        return_value += 1;
-        } else return_value += 1; // если нет выбранных стилей то все подойдут
+            for (Artwork.Style _style : styles) {
+                boolean found = false;
+                for (Artwork.Style style : advert.styles)
+                    if (style.id == _style.id) {
+                        found = true;
+                        break;
+                    }
+                if (!found)
+                    return false;
+            }
+        }
         //3
-        if (advert.desired_value >= min_value && advert.desired_value <= max_value)
-            return_value += 1;
+        if (advert.desired_value < min_value || advert.desired_value > max_value)
+            return false;
 
-        return return_value == 3;
+        return true;
     }
 
     private Filter filter = new Filter() {
@@ -132,6 +142,7 @@ public class HomeFragmentAdvertsAdapter extends RecyclerView.Adapter<HomeFragmen
             notifyDataSetChanged();
         }
     };
+
 
     class AdvertViewHolder extends RecyclerView.ViewHolder {
 

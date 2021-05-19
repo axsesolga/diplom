@@ -15,7 +15,6 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".data.model_edit.SelectStylesActivity"></activity>
         <activity android:name=".data.model_edit.SelectGenresActivity" />
-        <activity android:name=".solo_activities.users.ClientProfileEditActivity" />
         <activity android:name=".solo_activities.users.ArtistProfileEditActivity" />
         <activity android:name=".solo_activities.users.ClientProfileInfoActivity" />
         <activity android:name=".solo_activities.chat.UserChat" />

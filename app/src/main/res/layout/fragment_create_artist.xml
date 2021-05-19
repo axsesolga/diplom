@@ -10,7 +10,7 @@
         android:id="@+id/pictureUploadDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="description"
+        android:hint="Описание"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
@@ -20,7 +20,7 @@
         android:id="@+id/pictureSelectGenresButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="genre"
+        android:text="Выбрать жанры"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
@@ -31,7 +31,7 @@
         android:id="@+id/pictureShowGenres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="selected styles"
+        android:text="Выбранные жанры: нет"
         android:layout_toRightOf="@id/pictureSelectGenresButton"
         android:layout_alignBaseline="@id/pictureSelectGenresButton"
         />
@@ -40,7 +40,7 @@
         android:id="@+id/pictureSelectStylesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="style"
+        android:text="Выбрать стили"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
@@ -51,7 +51,7 @@
         android:id="@+id/pictureShowStyles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="selected styles"
+        android:text="Выбранные стили: нет"
         android:layout_toRightOf="@id/pictureSelectStylesButton"
         android:layout_alignBaseline="@id/pictureSelectStylesButton"
         />
@@ -60,7 +60,7 @@
         android:id="@+id/chooseFileButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="choose file"
+        android:text="Загрузить изображение"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
@@ -71,21 +71,11 @@
         android:id="@+id/createPicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="create"
+        android:text="Создать"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
         android:layout_below="@+id/chooseFileButton"
         />
-
-    <TextView
-        android:id="@+id/filePath"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/createPicture"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="24dp"
-        android:hint="base64str preview" />
 
 </RelativeLayout>

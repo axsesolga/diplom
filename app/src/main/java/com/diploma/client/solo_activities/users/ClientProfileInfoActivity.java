@@ -54,13 +54,14 @@ public class ClientProfileInfoActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.profileClientUsername)).setText(main_client.login);
         ((TextView) findViewById(R.id.profileClientMail)).setText(main_client.login);
         ((TextView) findViewById(R.id.profileClientName)).setText(main_client.name);
-        ((TextView) findViewById(R.id.profileClientType)).setText(main_client.userType);
 
+        /*
         StringBuilder favs = new StringBuilder();
         for (int id : main_client.favouriteArtsitsIDs)
             favs.append(id);
 
         ((TextView) findViewById(R.id.clientFavouriteArtists)).setText(favs);
+        */
     }
 
     static class logoutAsynch extends AsyncTask<Void, Void, Void> {

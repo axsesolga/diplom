@@ -136,12 +136,19 @@ public class HomeFragmentAdverts extends Fragment {
             @Override
             public void onClick(View view, int index) {
                 Intent intent = new Intent(getContext(), AdvertInfoActivity.class);
-                intent.putExtra("EXTRA_ADVERT_ID", String.valueOf(displayed_adverts.get(index).id));
+                intent.putExtra("EXTRA_ADVERT_ID", String.valueOf(adapter.displayed_adverts.get(index).id));
                 startActivity(intent);
             }
         }));
 
         return v;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        MainActivity.updateAdvertsPictures();
+        adapter.notifyDataSetChanged();
     }
 
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -153,6 +160,8 @@ public class HomeFragmentAdverts extends Fragment {
                     StringBuilder str = new StringBuilder();
                     str.append("Жанры: ");
                     String res = data.getExtras().getString("GENRES"); // ids sep by comma
+                    if (res.isEmpty())
+                        return;
                     for (String str_id : res.split(",")) {
                         int id = Integer.parseInt(str_id);
                         Artwork.Genre genre = Artwork.Genre.getById(id);
@@ -171,6 +180,8 @@ public class HomeFragmentAdverts extends Fragment {
                     StringBuilder str = new StringBuilder();
                     str.append("Стили: ");
                     String res = data.getExtras().getString("STYLES"); // ids sep by comma
+                    if (res.isEmpty())
+                        return;
                     for (String str_id : res.split(",")) {
                         int id = Integer.parseInt(str_id);
                         Artwork.Style style = Artwork.Style.getById(id);

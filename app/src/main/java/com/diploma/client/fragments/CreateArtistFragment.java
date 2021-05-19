@@ -114,11 +114,9 @@ public class CreateArtistFragment extends Fragment {
 
                     try {
                         String res = Picture.fileToBase64(data.getData(), getActivity().getContentResolver());
-                        ((TextView) getView().findViewById(R.id.filePath)).setText(res);
                         base64string = res;
                     } catch (IOException e) {
                         e.printStackTrace();
-                        ((TextView) getView().findViewById(R.id.filePath)).setText(e.getMessage());
                     }
                 }
                 break;

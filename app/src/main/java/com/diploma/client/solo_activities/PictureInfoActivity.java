@@ -26,13 +26,11 @@ public class PictureInfoActivity extends AppCompatActivity {
         int pictureId = Integer.parseInt(getIntent().getStringExtra("EXTRA_PICTURE_ID"));
 
         this.picture = MainActivity.getPictureById(pictureId);
-        ((TextView) findViewById(R.id.pictureId)).setText(Integer.toString(picture.id));
         ((TextView) findViewById(R.id.pictureDescription)).setText(picture.description);
 
 
 
         Button openPicture = (Button) findViewById(R.id.pictureArtistButton);
-        openPicture.setText(Integer.toString(picture.artist_id));
         openPicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +40,7 @@ public class PictureInfoActivity extends AppCompatActivity {
             }
         });
 
-        ((TextView) findViewById(R.id.pictureArtistButton)).setText(Integer.toString(picture.artist_id));
+
 
         StringBuilder genres_str = new StringBuilder();
         for (Artwork.Genre genre: picture.genres)

@@ -48,7 +48,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
-        android:hint="@string/prompt_email"
+        android:hint="Регистрация: почта"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
         android:inputType="textEmailAddress"
@@ -64,7 +64,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="72dp"
         android:layout_marginEnd="24dp"
-        android:hint="@string/prompt_name"
+        android:hint="Регистрация: Имя"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
         android:inputType="textEmailAddress"
@@ -78,10 +78,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="40dp"
         android:enabled="false"
-        android:text="@string/action_sign_in"
+        android:layout_marginTop="16dp"
+        android:text="Авторизироваться"
+        app:layout_constraintEnd_toEndOf="@id/registerName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registrationArtistCheckbox" />
 
@@ -90,10 +90,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginTop="76dp"
-        android:text="@string/action_register"
+        android:layout_marginTop="16dp"
+        android:text="Зарегестрироваться"
+        app:layout_constraintEnd_toEndOf="@id/registerName"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton"
-        tools:layout_editor_absoluteX="48dp" />
+        tools:layout_editor_absoluteX="121dp" />
 
     <ProgressBar
         android:id="@+id/loading"
@@ -115,9 +117,9 @@
         android:id="@+id/registrationArtistCheckbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="16dp"
         android:text="Register as artist"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/registerName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerMail" />
+        app:layout_constraintTop_toBottomOf="@+id/registerName" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,29 +4,23 @@
         android:id="@+id/navigation_home"
         android:enabled="true"
         android:icon="@drawable/menu_home"
-        android:title="Home"/>
+        android:title="Домой"/>
     <item
         android:id="@+id/navigation_chat"
         android:enabled="true"
         android:icon="@drawable/chat"
-        android:title="navigation_chat"/>
+        android:title="Чат"/>
 
     <item
         android:id="@+id/navigation_Create"
         android:enabled="true"
         android:icon="@drawable/menu_plus"
-        android:title="navigation_create"/>
-
-    <item
-        android:id="@+id/navigation_Fav"
-        android:enabled="true"
-        android:icon="@drawable/meny_star"
-        android:title="navigation_fav"/>
+        android:title="Создать"/>
 
     <item
         android:id="@+id/navigation_Profile"
         android:enabled="true"
         android:icon="@drawable/menu_head"
-        android:title="navigation_profile"/>
+        android:title="Профиль"/>
 
 </menu>

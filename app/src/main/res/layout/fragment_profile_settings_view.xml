@@ -6,6 +6,8 @@
         android:id="@+id/openInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
         android:text="openInfo" />
 
 
@@ -13,6 +15,7 @@
         android:id="@+id/openInfoEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_below="@id/openInfo"
         android:text="openInfoEdit"
         />

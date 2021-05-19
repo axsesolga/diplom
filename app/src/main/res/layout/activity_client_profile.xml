@@ -1,115 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".solo_activities.users.ClientProfileInfoActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin">
 
-    <TextView
-        android:id="@+id/profileClientUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="USERNAME"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        />
-
-    <TextView
-        android:id="@+id/profileClientMail"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        android:text="MAIL"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-
-        android:layout_below="@+id/profileClientUsername"
-        />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/profileClientType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="USERTYPE"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
+            <TextView
+                android:id="@+id/te1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_alignBottom="@id/profileClientUsername"
 
-        android:layout_below="@+id/profileClientMail"
-        />
+                android:text="Логин:\t"
+                />
 
-    <TextView
-        android:id="@+id/profileClientName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FULL NAME"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-
-        android:layout_below="@+id/profileClientType"
-        />
+            <TextView
+                android:id="@+id/te2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_alignBottom="@id/profileClientMail"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="Почта:\t"
+                />
+            <TextView
+                android:id="@+id/te3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_alignBottom="@id/profileClientName"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="Имя:\t"
+                />
 
 
 
-    <TextView
-        android:id="@+id/clientFavouriteArtists"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CLIENT FAVS"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
 
-        android:layout_below="@+id/profileClientName"
-        />
+            <EditText
+                android:id="@+id/profileClientUsername"
+                android:layout_width="match_parent"
 
+                android:layout_toRightOf="@id/te1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
 
-    <TextView
-        android:id="@+id/profileClientId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CLIENT id"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-
-        android:layout_below="@+id/clientFavouriteArtists"
-        />
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:background="@color/background"
+                android:gravity="center"
+                android:hint="USERNAME"
+                android:textAlignment="center" />
 
 
-    <TextView
-        android:id="@+id/profileClientUserId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Base ID"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-
-        android:layout_below="@+id/profileClientId"
-        />
+            <EditText
+                android:id="@+id/profileClientMail"
+                android:layout_below="@id/profileClientUsername"
+                android:layout_width="match_parent"
+                android:layout_toRightOf="@id/te2"
 
 
-    <Button
-        android:id="@+id/sendMessageClientButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:enabled="false"
-        android:text="SendMessage"
-        android:layout_alignParentBottom="true"/>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:background="@color/background"
+                android:gravity="center"
+                android:hint="EMAIL"
+                android:textAlignment="center" />
+
+
+
+            <EditText
+                android:id="@+id/profileClientName"
+                android:layout_below="@id/profileClientMail"
+                android:layout_width="match_parent"
+                android:layout_toRightOf="@id/te3"
+
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:background="@color/background"
+                android:gravity="center"
+                android:hint="NAME"
+                android:textAlignment="center" />
+
+
+
+            <Button
+                android:id="@+id/sendMessageClientButton"
+                android:layout_below="@id/profileClientName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="16dp"
+                android:enabled="false"
+                android:text="Отправить сообщение"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

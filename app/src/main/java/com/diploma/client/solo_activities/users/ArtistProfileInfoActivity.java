@@ -52,14 +52,13 @@ public class ArtistProfileInfoActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.profileArtistUsername)).setText(artist.login);
         ((TextView) findViewById(R.id.profileArtistMail)).setText(artist.login);
         ((TextView) findViewById(R.id.profileArtistName)).setText(artist.name);
-        ((TextView) findViewById(R.id.profileArtistType)).setText(artist.userType);
 
 
         ((TextView) findViewById(R.id.artistProfileNickname)).setText(artist.nickname);
         ((TextView) findViewById(R.id.artistProfileVKurl)).setText(artist.VkUrl);
         ((TextView) findViewById(R.id.artistProfileASurl)).setText(artist.ArtStationUrl);
         ((TextView) findViewById(R.id.artistProfileOtherUrl)).setText(artist.OtherUrl);
-        ((TextView) findViewById(R.id.artistProfileAvailable)).setText(artist.available ? "available" : "not available");
+        ((TextView) findViewById(R.id.artistProfileAvailable)).setText(artist.available ? "Доступен для заказов" : "Недоступен для заказов");
 
         StringBuilder genres_str = new StringBuilder();
         for (Artwork.Genre genre : artist.genres)

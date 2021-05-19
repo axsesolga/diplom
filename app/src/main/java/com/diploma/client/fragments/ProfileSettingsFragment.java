@@ -16,12 +16,11 @@ import com.diploma.client.R;
 import com.diploma.client.solo_activities.users.ArtistProfileInfoActivity;
 import com.diploma.client.solo_activities.users.ArtistProfileEditActivity;
 import com.diploma.client.solo_activities.users.ClientProfileInfoActivity;
-import com.diploma.client.solo_activities.users.ClientProfileEditActivity;
 
 public class ProfileSettingsFragment extends Fragment {
     public ProfileSettingsFragment() {
     }
-    
+    Button openEditInfoButton;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,7 +38,7 @@ public class ProfileSettingsFragment extends Fragment {
             }
         });
 
-        Button openEditInfoButton = (Button) v.findViewById(R.id.openInfoEdit);
+        openEditInfoButton = (Button) v.findViewById(R.id.openInfoEdit);
         openEditInfoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,5 +52,15 @@ public class ProfileSettingsFragment extends Fragment {
 
 
         return v;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (MainActivity.getUser() != null)
+            if (MainActivity.getUser().isClient()) {
+                openEditInfoButton.setEnabled(false);
+                openEditInfoButton.setVisibility(View.GONE);
+            }
     }
 }

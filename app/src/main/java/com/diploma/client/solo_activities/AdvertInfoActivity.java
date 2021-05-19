@@ -26,10 +26,10 @@ public class AdvertInfoActivity extends AppCompatActivity {
         Advert advert = MainActivity.getAdvertById(advertId); // get by id
 
         ((TextView) findViewById(R.id.advertId)).setText(Integer.toString(advert.id));
-        ((TextView) findViewById(R.id.AdvertCreateDesiredValue)).setText(Integer.toString(advert.desired_value));
-        ((TextView) findViewById(R.id.AdvertCreateTitle)).setText(advert.title);
-        ((TextView) findViewById(R.id.AdvertCreateDescription)).setText(advert.description);
-        ((TextView) findViewById(R.id.AdvertCreateAdditionalInfo)).setText(advert.additional_information);
+        ((TextView) findViewById(R.id.AdvertDesiredValue)).setText(Integer.toString(advert.desired_value));
+        ((TextView) findViewById(R.id.AdvertTitle)).setText(advert.title);
+        ((TextView) findViewById(R.id.AdvertDescription)).setText(advert.description);
+        ((TextView) findViewById(R.id.advertAdditionalInfo)).setText(advert.additional_information);
 
         StringBuilder genres_str = new StringBuilder();
         for (Artwork.Genre genre: advert.genres)

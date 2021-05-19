@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".solo_activities.users.ArtistProfileInfoActivity">
 
 
@@ -24,9 +23,6 @@
             android:scrollbars="vertical">
 
 
-
-
-
             <EditText
                 android:id="@+id/artistProfileNicknameEdit"
                 android:layout_width="match_parent"
@@ -38,7 +34,7 @@
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
                 android:gravity="center"
-                android:hint="NICKNAME"
+                android:hint="Никнейм"
 
                 android:textAlignment="center" />
 
@@ -54,7 +50,7 @@
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
                 android:gravity="center"
-                android:hint="VK"
+                android:hint="Ссылка на VK"
 
                 android:textAlignment="center" />
 
@@ -71,14 +67,14 @@
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
                 android:gravity="center"
-                android:hint="ARTSTATION"
+                android:hint="Ссылка на ARTSTATION"
 
                 android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/artistProfileOtherUrlEdit"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
 
                 android:layout_below="@id/artistProfileASurlEdit"
                 android:layout_alignParentRight="true"
@@ -87,7 +83,7 @@
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
                 android:gravity="center"
-                android:hint="OTHER URL"
+                android:hint="Ссылка на другой профиль"
 
                 android:textAlignment="center" />
 
@@ -104,7 +100,7 @@
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
                 android:gravity="center"
-                android:text="AVAILBLE"
+                android:text="Доступность для заказов"
 
                 android:textAlignment="center" />
 
@@ -121,7 +117,7 @@
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
                 android:gravity="center"
-                android:text="GENRES SELECT"
+                android:text="Выбрать жанры"
 
                 android:textAlignment="center" />
 
@@ -137,7 +133,7 @@
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
                 android:gravity="center"
-                android:text="GENRES"
+                android:text="Выбранные жанры"
 
                 android:textAlignment="center" />
 
@@ -154,7 +150,7 @@
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
                 android:gravity="center"
-                android:text="STYLES SELECT"
+                android:text="Выбрать стили"
 
                 android:textAlignment="center" />
 
@@ -170,7 +166,7 @@
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
                 android:gravity="center"
-                android:text="STYLES"
+                android:text="Выбранные стили"
 
                 android:textAlignment="center" />
 
@@ -186,10 +182,9 @@
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:background="@color/background"
                 android:gravity="center"
-                android:hint="EXCLUSIONS"
+                android:hint="Запретные темы"
 
                 android:textAlignment="center" />
-
 
 
             <Button
@@ -207,7 +202,7 @@
                 android:gravity="center"
 
 
-                android:text="Save"
+                android:text="Сохранить"
                 android:textAlignment="center" />
         </RelativeLayout>
     </ScrollView>

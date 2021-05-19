@@ -8,18 +8,28 @@
 
     <Button
         android:id="@+id/homeButtonPictures"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/dummy"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
         android:text="pictures" />
 
     <Button
         android:id="@+id/homeButtonAdverts"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/dummy"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
         android:layout_alignParentRight="true"
         android:text="adverts" />
 
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/dummy"/>
 
     <FrameLayout
         android:id="@+id/home_fragment_container"

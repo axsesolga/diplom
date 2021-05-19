@@ -73,25 +73,39 @@ public class HomeFragmentPicturesAdapter extends RecyclerView.Adapter<HomeFragme
 
 
     private boolean checkFilters(Picture picture) {
-        int return_value = 0;
 
-        // 1
+
+        if (!MainActivity.getArtistByArtistId(picture.artist_id).available)
+            return false;
+
         if (genres != null) {
-            for (Artwork.Genre genre : picture.genres)
-                for (Artwork.Genre _genre : genres)
-                    if (genre.id == _genre.id)
-                        return_value += 1;
-        } else return_value += 1;
+            for (Artwork.Genre _genre : genres) {
+                boolean found = false;
+                for (Artwork.Genre genre : picture.genres)
+                    if (genre.id == _genre.id) {
+                        found = true;
+                        break;
+                    }
+                if (!found)
+                    return false;
+            }
+        }
 
         // 2
         if (styles != null) {
-            for (Artwork.Style style : picture.styles)
-                for (Artwork.Style _style : styles)
-                    if (style.id == _style.id)
-                        return_value += 1;
-        } else return_value += 1; // если нет выбранных стилей то все подойдут
+            for (Artwork.Style _style : styles) {
+                boolean found = false;
+                for (Artwork.Style style : picture.styles)
+                    if (style.id == _style.id) {
+                        found = true;
+                        break;
+                    }
+                if (!found)
+                    return false;
+            }
+        }
 
-        return return_value == 2;
+        return true;
     }
 
     private Filter filter = new Filter() {

@@ -227,10 +227,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 break;
 
-                            case R.id.navigation_Fav:
-                                //finish();
-                                selectedFragment = favouriteFragment;
-                                break;
+
 
                             case R.id.navigation_Profile:
                                 //finish();

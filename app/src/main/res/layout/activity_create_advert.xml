@@ -11,19 +11,18 @@
     <EditText
         android:id="@+id/AdvertCreateDesiredValue"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
 
         android:textAlignment="center"
         android:gravity="center"
         android:background="@color/background"
 
 
-        android:hint="desired value"
+        android:hint="Желаемая стоимость"
 
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
-
 
 
         />
@@ -33,13 +32,13 @@
         android:id="@+id/AdvertCreateTitle"
 
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
 
         android:textAlignment="center"
         android:gravity="center"
         android:background="@color/background"
 
-        android:hint="title"
+        android:hint="Заголовок"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
@@ -51,12 +50,12 @@
     <EditText
         android:id="@+id/AdvertCreateDescription"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
 
         android:textAlignment="center"
         android:gravity="center"
         android:background="@color/background"
-        android:hint="descripton"
+        android:hint="Описание"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
@@ -68,12 +67,12 @@
     <EditText
         android:id="@+id/AdvertCreateAdditionalInfo"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
 
         android:textAlignment="center"
         android:gravity="center"
         android:background="@color/background"
-        android:hint="add info"
+        android:hint="Дополнительная информация"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"

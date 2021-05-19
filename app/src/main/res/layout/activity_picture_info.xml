@@ -8,49 +8,44 @@
 
 
     <TextView
-        android:id="@+id/pictureId"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:id="@+id/tex1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_alignBottom="@id/pictureDescription"
 
-        android:textAlignment="center"
-        android:gravity="center"
-        android:background="@color/background"
-
-        android:text="id"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-
-
+        android:text="Описание:\t"
         />
-
 
     <TextView
-        android:id="@+id/pictureUrl"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-
-        android:textAlignment="center"
-        android:gravity="center"
-        android:background="@color/background"
-
-        android:text="url"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:layout_alignParentRight="true"
-
-        android:layout_below="@id/pictureId"
-
+        android:id="@+id/tex2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_alignBottom="@id/pictureGenres"
+        android:text="Жанры:\t"
         />
+    <TextView
+        android:id="@+id/tex3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_alignBottom="@id/pictureStyles"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:text="Стили:\t"
+        />
+
 
     <TextView
         android:id="@+id/pictureDescription"
+        android:layout_toRightOf="@id/tex1"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
 
         android:textAlignment="center"
         android:gravity="center"
@@ -61,8 +56,6 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
         android:layout_alignParentRight="true"
-
-        android:layout_below="@id/pictureUrl"
 
         />
 
@@ -75,7 +68,7 @@
         android:gravity="center"
         android:background="@color/background"
 
-        android:text="artist id"
+        android:text="Создатель"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
@@ -88,7 +81,8 @@
     <TextView
         android:id="@+id/pictureGenres"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_toRightOf="@id/tex2"
+        android:layout_height="wrap_content"
 
         android:textAlignment="center"
         android:gravity="center"
@@ -107,7 +101,8 @@
     <TextView
         android:id="@+id/pictureStyles"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_toRightOf="@id/tex3"
+        android:layout_height="wrap_content"
 
         android:textAlignment="center"
         android:gravity="center"
